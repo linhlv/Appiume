@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Appiume.Web.Ecommerce.Core
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public interface IStock
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        string Sku { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        decimal Price { get; set; }
+    }
+}

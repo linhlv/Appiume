@@ -1,0 +1,10 @@
+packages
+.vs/Appiume/v14/.suo
+Appiume/bin
+Appiume/obj
+Appiume/Appiume.csproj.user
+Appiume.Web/bin
+Appiume.Web/obj
+Appiume.Web/Logs
+Appiume.Web/Appiume.Web.csproj.user
+

@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Appiume.Apm.Threading;
+
+namespace Appiume.Apm.Auditing
+{
+    /// <summary>
+    /// Extension methods for <see cref="IAuditingStore"/>.
+    /// </summary>
+    public static class AuditingStoreExtensions
+    {
+        /// <summary>
+        /// Should save audits to a persistent store.
+        /// </summary>
+        /// <param name="auditingStore">Auditing store</param>
+        /// <param name="auditInfo">Audit informations</param>
+        public static void Save(this IAuditingStore auditingStore, AuditInfo auditInfo)
+        {
+            AsyncHelper.RunSync(() => auditingStore.SaveAsync(auditInfo));
+        }
+    }
+}
