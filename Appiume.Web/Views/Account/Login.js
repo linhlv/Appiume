@@ -3,10 +3,10 @@
     $(function() {
         $('#LoginButton').click(function (e) {
             e.preventDefault();
-            Appiume.Apm.ui.setBusy(
+            apm.ui.setBusy(
                 $('#LoginArea'),
-                Appiume.Apm.ajax({
-                    url: Appiume.Apm.appPath + 'Account/Login',
+                apm.ajax({
+                    url: apm.appPath + 'Account/Login',
                     type: 'POST',
                     data: JSON.stringify({
                         tenancyName: $('#TenancyName').val(),

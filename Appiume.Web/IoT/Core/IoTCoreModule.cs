@@ -27,7 +27,7 @@ namespace Appiume.Web.IoT.Core
                     IoTConsts.LocalizationSourceName,
                     new XmlEmbeddedFileLocalizationDictionaryProvider(
                         Assembly.GetExecutingAssembly(),
-                        "Appiume.Web.IoT.Localization.Source"
+                        "Appiume.Web.IoT.Core.Localization.Source"
                         )
                     )
                 );

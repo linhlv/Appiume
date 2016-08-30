@@ -321,20 +321,10 @@
     <Content Include="IoT\Core\Localization\Source\IoT-tr.xml" />
     <Content Include="IoT\Core\Localization\Source\IoT.xml" />
     <Content Include="log4net.config" />
-    <Content Include="App\Main\colors.css.map" />
-    <Content Include="App\Main\colors.less" />
-    <Content Include="App\Main\main.css.map" />
-    <Content Include="App\Main\main.less" />
     <Content Include="App\Main\views\about\about.cshtml" />
-    <Content Include="App\Main\views\about\about.css.map" />
-    <Content Include="App\Main\views\about\about.less" />
     <Content Include="App\Main\views\events\createDialog.cshtml" />
     <Content Include="App\Main\views\events\detail.cshtml" />
-    <Content Include="App\Main\views\events\detail.css.map" />
-    <Content Include="App\Main\views\events\detail.less" />
     <Content Include="App\Main\views\events\index.cshtml" />
-    <Content Include="App\Main\views\events\index.css.map" />
-    <Content Include="App\Main\views\events\index.less" />
     <Content Include="App\Main\views\layout\header.cshtml" />
     <Content Include="App\Main\views\layout\layout.cshtml" />
     <Content Include="App\Main\web.config" />
@@ -1373,7 +1363,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55407</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://appiume.iot/</IISUrl>
+          <IISUrl>http://appiume.iot</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

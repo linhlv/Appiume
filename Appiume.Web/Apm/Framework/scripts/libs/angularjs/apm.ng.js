@@ -114,7 +114,7 @@
 
                     'request': function (config) {
                         if (endsWith(config.url, '.cshtml')) {
-                            config.url = apm.appPath + 'AbpAppView/Load?viewUrl=' + config.url + '&_t=' + apm.pageLoadTime.getTime();
+                            config.url = apm.appPath + 'ApmAppView/Load?viewUrl=' + config.url + '&_t=' + apm.pageLoadTime.getTime();
                         }
 
                         return config;
@@ -122,7 +122,7 @@
 
                     'response': function (response) {
                         if (!response.data || !response.data.__apm) {
-                            //Non ABP related return value
+                            //Non APM related return value
                             return response;
                         }
 

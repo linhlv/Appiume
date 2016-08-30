@@ -7,7 +7,7 @@
 
     /* JQUERY ENHANCEMENTS ***************************************************/
 
-    // getz.ajax -> uses $.ajax ------------------------------------------------
+    // apm.ajax -> uses $.ajax ------------------------------------------------
 
     apm.ajax = function (userOptions) {
         userOptions = userOptions || {};
@@ -19,14 +19,14 @@
         return $.Deferred(function ($dfd) {
             $.ajax(options)
                 .done(function (data, textStatus, jqXHR) {
-                    if (data.__getz) {
+                    if (data.__apm) {
                         apm.ajax.handleResponse(data, userOptions, $dfd, jqXHR);
                     } else {
                         $dfd.resolve(data);
                         userOptions.success && userOptions.success(data);
                     }
                 }).fail(function (jqXHR) {
-                    if (jqXHR.responseJSON && jqXHR.responseJSON.__getz) {
+                    if (jqXHR.responseJSON && jqXHR.responseJSON.__apm) {
                         apm.ajax.handleResponse(jqXHR.responseJSON, userOptions, $dfd, jqXHR);
                     } else {
                         apm.ajax.handleNonAbpErrorResponse(jqXHR, userOptions, $dfd);
@@ -170,13 +170,13 @@
      * http://www.malsup.com/jquery/form/
      */
 
-    // getzAjaxForm -> uses ajaxForm ------------------------------------------
+    // apmAjaxForm -> uses ajaxForm ------------------------------------------
 
     if ($.fn.ajaxForm) {
-        $.fn.getzAjaxForm = function (userOptions) {
+        $.fn.apmAjaxForm = function (userOptions) {
             userOptions = userOptions || {};
 
-            var options = $.extend({}, $.fn.getzAjaxForm.defaults, userOptions);
+            var options = $.extend({}, $.fn.apmAjaxForm.defaults, userOptions);
 
             options.beforeSubmit = function () {
                 apm.ajax.blockUI(options);
@@ -197,18 +197,18 @@
             return this.ajaxForm(options);
         };
 
-        $.fn.getzAjaxForm.defaults = {
+        $.fn.apmAjaxForm.defaults = {
             method: 'POST'
         };
     }
 
-    apm.event.on('getz.dynamicScriptsInitialized', function () {
-        apm.ajax.defaultError.message = apm.localization.getzWeb('DefaultError');
-        apm.ajax.defaultError.details = apm.localization.getzWeb('DefaultErrorDetail');
-        apm.ajax.defaultError401.message = apm.localization.getzWeb('DefaultError401');
-        apm.ajax.defaultError401.details = apm.localization.getzWeb('DefaultErrorDetail401');
-        apm.ajax.defaultError403.message = apm.localization.getzWeb('DefaultError403');
-        apm.ajax.defaultError403.details = apm.localization.getzWeb('DefaultErrorDetail403');
+    apm.event.on('apm.dynamicScriptsInitialized', function () {
+        apm.ajax.defaultError.message = apm.localization.apmWeb('DefaultError');
+        apm.ajax.defaultError.details = apm.localization.apmWeb('DefaultErrorDetail');
+        apm.ajax.defaultError401.message = apm.localization.apmWeb('DefaultError401');
+        apm.ajax.defaultError401.details = apm.localization.apmWeb('DefaultErrorDetail401');
+        apm.ajax.defaultError403.message = apm.localization.apmWeb('DefaultError403');
+        apm.ajax.defaultError403.details = apm.localization.apmWeb('DefaultErrorDetail403');
     });
 
 })(jQuery);

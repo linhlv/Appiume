@@ -8,7 +8,7 @@ namespace Appiume.Apm.Tenancy.Configuration
     /// <summary>
     /// Represents a setting for a tenant or user.
     /// </summary>
-    [Table("TenancySettings")]
+    [Table("ApmTenancySettings")]
     public class Setting : AuditedEntity<long>, IMayHaveTenant
     {
         /// <summary>
