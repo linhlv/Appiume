@@ -229,6 +229,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Apm\Framework\scripts\apm.js" />
+    <Content Include="Apm\Framework\scripts\libs\angularjs\apm.ng.js" />
+    <Content Include="Apm\Framework\scripts\libs\apm.blockUI.js" />
+    <Content Include="Apm\Framework\scripts\libs\apm.jquery.js" />
+    <Content Include="Apm\Framework\scripts\libs\apm.jtable.js" />
+    <Content Include="Apm\Framework\scripts\libs\apm.moment.js" />
+    <Content Include="Apm\Framework\scripts\libs\apm.signalr.js" />
+    <Content Include="Apm\Framework\scripts\libs\apm.spin.js" />
+    <Content Include="Apm\Framework\scripts\libs\apm.sweet-alert.js" />
+    <Content Include="Apm\Framework\scripts\libs\apm.toastr.js" />
+    <Content Include="Apm\Framework\scripts\libs\requirejs\plugins\service.js" />
+    <Content Include="Apm\Framework\scripts\utils\ie10fix.js" />
+    <Content Include="Apm\Framework\styles\apm.css" />
+    <Content Include="Apm\Framework\styles\apm.min.css" />
+    <Content Include="Apm\Framework\styles\apm.mixings.css" />
+    <Content Include="Apm\Framework\styles\apm.mixings.min.css" />
+    <Content Include="Apm\Framework\styles\utils\ie10fix.css" />
     <Content Include="App\Main\app.js" />
     <Content Include="App\Main\colors.css" />
     <Content Include="App\Main\colors.min.css" />
@@ -368,6 +385,10 @@
     <Content Include="Scripts\angular-parse-ext.min.js.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Apm\Framework\styles\apm.css.map" />
+    <Content Include="Apm\Framework\styles\apm.less" />
+    <Content Include="Apm\Framework\styles\apm.mixings.css.map" />
+    <Content Include="Apm\Framework\styles\apm.mixings.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

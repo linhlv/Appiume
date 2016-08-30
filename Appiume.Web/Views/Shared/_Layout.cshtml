@@ -25,7 +25,7 @@
 
     <script type="text/javascript">
         //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
-        var abp = abp || {}; Appiume.Apm.appPath = '@ApplicationPath';
+        var apm = apm || {}; apm.appPath = '@ApplicationPath';
     </script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -49,12 +49,12 @@
     @Html.IncludeScript("~/Scripts/others/spinjs/jquery.spin.js")
     @Html.IncludeScript("~/Scripts/sweetalert/sweet-alert.min.js")
 
-    @Html.IncludeScript("~/Apm/Framework/scripts/Appiume.Apm.js")
-    @Html.IncludeScript("~/Apm/Framework/scripts/libs/Appiume.Apm.jquery.js")
-    @Html.IncludeScript("~/Apm/Framework/scripts/libs/Appiume.Apm.toastr.js")
-    @Html.IncludeScript("~/Apm/Framework/scripts/libs/Appiume.Apm.blockUI.js")
-    @Html.IncludeScript("~/Apm/Framework/scripts/libs/Appiume.Apm.spin.js")
-    @Html.IncludeScript("~/Apm/Framework/scripts/libs/Appiume.Apm.sweet-alert.js")
+    @Html.IncludeScript("~/Apm/Framework/scripts/apm.js")
+    @Html.IncludeScript("~/Apm/Framework/scripts/libs/apm.jquery.js")
+    @Html.IncludeScript("~/Apm/Framework/scripts/libs/apm.toastr.js")
+    @Html.IncludeScript("~/Apm/Framework/scripts/libs/apm.blockUI.js")
+    @Html.IncludeScript("~/Apm/Framework/scripts/libs/apm.spin.js")
+    @Html.IncludeScript("~/Apm/Framework/scripts/libs/apm.sweet-alert.js")
 
     <!-- Dynamic scripts of Apm system (They are created on runtime and can not be bundled) -->
     <script src="~/api/ApmServiceProxies/GetAll"></script>

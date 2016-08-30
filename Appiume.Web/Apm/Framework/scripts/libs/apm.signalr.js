@@ -11,7 +11,7 @@
     apm.signalr.hubs = apm.signalr.hubs || {};
 
     //Get the common hub
-    apm.signalr.hubs.common = $.connection.apmCommonHub;
+    apm.signalr.hubs.common = $.connection.getzCommonHub;
 
     var commonHub = apm.signalr.hubs.common;
     if (!commonHub) {
@@ -41,18 +41,5 @@
     if (apm.signalr.autoConnect) {
         apm.signalr.connect();
     }
-
-    //reconnect if hub disconnects
-    $.connection.hub.disconnected(function () {
-        if (!apm.signalr.autoConnect) {
-            return;
-        }
-
-        setTimeout(function () {
-            if ($.connection.hub.state === $.signalR.connectionState.disconnected) {
-                $.connection.hub.start();
-            }
-        }, 5000);
-    });
 
 })(jQuery);

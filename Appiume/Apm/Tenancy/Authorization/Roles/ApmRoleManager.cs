@@ -16,8 +16,6 @@ using Appiume.Apm.Tenancy.Runtime.Caching;
 using Appiume.Apm.Tenancy;
 using Appiume.Apm.Tenancy.Authorization;
 using Appiume.Apm.Tenancy.Authorization.Roles;
-using Appiume.Apm.Tenancy.Configuration;
-using Appiume.Apm.Tenancy.IdentityFramework;
 using Microsoft.AspNet.Identity;
 
 namespace Appiume.Apm.Tenancy.Authorization.Roles

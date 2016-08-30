@@ -7,14 +7,6 @@ using Appiume.Apm.Tenancy.Application.Features;
 using Appiume.Apm.Tenancy.Authorization.Roles;
 using Appiume.Apm.Tenancy.Authorization.Users;
 using Appiume.Apm.Tenancy.MultiTenancy;
-using Appiume.Apm.Tenancy.Application.Editions;
-using Appiume.Apm.Application.Features;
-using Appiume.Apm.Tenancy.Authorization.Roles;
-using Appiume.Apm.Tenancy.Authorization.Users;
-using Appiume.Apm.BackgroundJobs;
-using Appiume.Apm.MultiTenancy;
-using Appiume.Apm.Tenancy.Application.Features;
-using Appiume.Apm.Tenancy.MultiTenancy;
 
 namespace Appiume.Apm.Tenancy.Ef
 {

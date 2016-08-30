@@ -6,11 +6,6 @@ using Appiume.Apm.Collections.Extensions;
 using Appiume.Apm.Configuration.Startup;
 using Appiume.Apm.Dependency;
 using Appiume.Apm.PlugIns;
-using Appiume.Apm.Modules;
-using Appiume.Apm;
-using Appiume.Apm.Configuration.Startup;
-using Appiume.Apm.Dependency;
-using Appiume.Apm.Modules;
 using Castle.Core.Logging;
 
 namespace Appiume.Apm.Modules

@@ -1,0 +1,40 @@
+﻿.getz-clickable {
+  cursor: pointer;
+}
+.getz-dock-top {
+  left: 0;
+  top: 0;
+  right: 0;
+  position: absolute;
+  margin: 0;
+}
+.getz-dock-right {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  margin: 0;
+}
+.getz-dock-bottom {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  margin: 0;
+}
+.getz-dock-left {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  margin: 0;
+}
+.getz-busy-indicator-small {
+  width: 36px;
+  height: 36px;
+}
+.getz-busy-indicator-small.getz-dock-left,
+.getz-busy-indicator-small.getz-dock-right {
+  height: auto;
+}
+/*# sourceMappingURL=getz.css.map */

@@ -104,7 +104,7 @@ namespace Appiume.Apm.Web.Mvc.Controllers
             var script = new StringBuilder();
 
             script.AppendLine("(function(){");
-            script.AppendLine("    Appiume.Apm.event.trigger('Appiume.Apm.dynamicScriptsInitialized');");
+            script.AppendLine("    apm.event.trigger('apm.dynamicScriptsInitialized');");
             script.Append("})();");
 
             return script.ToString();

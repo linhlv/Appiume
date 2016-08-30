@@ -1,0 +1,41 @@
+﻿@import "getz.mixings.less";
+
+// COMMON STYLES //////////////////////////////////////////////////////////////
+
+.getz-clickable {
+    cursor: pointer;
+}
+
+// Docking
+
+.getz-dock-top {
+    .getz-dock(top);
+}
+
+.getz-dock-right {
+    .getz-dock(right);
+}
+
+.getz-dock-bottom {
+    .getz-dock(bottom);
+}
+
+.getz-dock-left {
+    .getz-dock(left);
+}
+
+//Busy indicator
+
+.getz-busy-indicator {
+
+}
+
+.getz-busy-indicator-small {
+    width: 36px;
+    height: 36px;
+
+    &.getz-dock-left, 
+    &.getz-dock-right {
+        height: auto;
+    }
+}
