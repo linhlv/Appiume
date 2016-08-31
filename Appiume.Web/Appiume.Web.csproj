@@ -318,8 +318,8 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="IoT\Core\Localization\Source\IoT-tr.xml" />
-    <Content Include="IoT\Core\Localization\Source\IoT.xml" />
+    <EmbeddedResource Include="IoT\Core\Localization\Source\IoT-tr.xml" />
+    <EmbeddedResource Include="IoT\Core\Localization\Source\IoT.xml" />
     <Content Include="log4net.config" />
     <Content Include="App\Main\views\about\about.cshtml" />
     <Content Include="App\Main\views\events\createDialog.cshtml" />

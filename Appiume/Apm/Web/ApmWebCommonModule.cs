@@ -32,7 +32,7 @@ namespace Appiume.Apm.Web
                 new DictionaryBasedLocalizationSource(
                     ApmWebLocalizedMessages.SourceName,
                     new XmlEmbeddedFileLocalizationDictionaryProvider(
-                        Assembly.GetExecutingAssembly(), "Apm.Web.Common.Web.Localization.ApmWebXmlSource"
+                        Assembly.GetExecutingAssembly(), "Appiume.Apm.Web.Localization.ApmWebXmlSource"
                         )));
         }
 
