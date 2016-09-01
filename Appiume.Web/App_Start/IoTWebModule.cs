@@ -6,18 +6,18 @@ using Appiume.Apm.Dependency;
 using Appiume.Apm.Localization;
 using Appiume.Apm.Modules;
 using Appiume.Apm.Web.Mvc;
-using Appiume.Web.IoT.Api;
-using Appiume.Web.IoT.Application;
-using Appiume.Web.IoT.Ef;
-using Appiume.Web.IoT.Navigation;
 using Appiume.Web.IoT.Web;
+using Appiume.Web.Modules.EventCloud.Application;
+using Appiume.Web.Modules.EventCloud.EntityFramework;
+using Appiume.Web.Modules.EventCloud.WebApi;
+using Appiume.Web.Modules.EventCloud.WebMvc.Navigation;
 
 namespace Appiume.Web
 {
     [DependsOn(
-        typeof(IoTDataModule),
-        typeof(IoTApplicationModule),
-        typeof(IoTWebApiModule),
+        typeof(EventCloudDataModule),
+        typeof(EventCloudApplicationModule),
+        typeof(EventCloudWebApiModule),
         typeof(ApmWebMvcModule)
         )]
     public class IoTWebModule : ApmModule
@@ -29,7 +29,7 @@ namespace Appiume.Web
             Configuration.Localization.Languages.Add(new LanguageInfo("tr", "Türkçe", "famfamfam-flag-tr"));
 
             //Configure navigation/menu
-            Configuration.Navigation.Providers.Add<IoTNavigationProvider>();
+            Configuration.Navigation.Providers.Add<EventCloudNavigationProvider>();
         }
 
         public override void Initialize()

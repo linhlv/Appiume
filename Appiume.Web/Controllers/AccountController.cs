@@ -15,23 +15,19 @@ using Appiume.Apm.Tenancy.Authorization.Users;
 using Appiume.Apm.Threading;
 using Appiume.Apm.UI;
 using Appiume.Apm.Web.Mvc.Models;
-using Appiume.Web.IoT.Account;
-using Appiume.Web.IoT.Controllers;
-using Appiume.Web.IoT.Core.Authorization.Roles;
-using Appiume.Web.IoT.Core.MultiTenancy;
-using Appiume.Web.IoT.Core.Users;
+using Appiume.Web.Controllers.Results;
+using Appiume.Web.Modules.EventCloud.Core.Authorization.Roles;
+using Appiume.Web.Modules.EventCloud.Core.MultiTenancy;
+using Appiume.Web.Modules.EventCloud.Core.Users;
+using Appiume.Web.Modules.EventCloud.WebMvc.Controllers;
+using Appiume.Web.Modules.EventCloud.WebMvc.Models.Account;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using MyCompanyName.AbpZeroTemplate.Web.Controllers.Results;
-using LoginFormViewModel = Appiume.Web.IoT.Models.Account.LoginFormViewModel;
-using LoginViewModel = Appiume.Web.IoT.Models.Account.LoginViewModel;
-using RegisterResultViewModel = Appiume.Web.IoT.Models.Account.RegisterResultViewModel;
-using RegisterTenantViewModel = Appiume.Web.IoT.Models.Account.RegisterTenantViewModel;
 
 namespace Appiume.Web.Controllers
 {
-    public class AccountController : IoTControllerBase
+    public class AccountController : EventCloudControllerBase
     {
         private readonly TenantManager _tenantManager;
         private readonly UserManager _userManager;
@@ -225,7 +221,7 @@ namespace Appiume.Web.Controllers
 
                     if (string.IsNullOrWhiteSpace(model.Password))
                     {
-                        model.Password = IoT.Core.Users.User.CreateRandomPassword();
+                        model.Password = Modules.EventCloud.Core.Users.User.CreateRandomPassword();
                     }
 
                     if (string.Equals(externalLoginInfo.Email, model.EmailAddress, StringComparison.InvariantCultureIgnoreCase))
@@ -348,7 +344,7 @@ namespace Appiume.Web.Controllers
 
                     //Create admin user for the tenant
 
-                    var adminUser = IoT.Core.Users.User.CreateTenantAdminUser(tenant.Id, model.EmailAddress, model.Password);
+                    var adminUser = Modules.EventCloud.Core.Users.User.CreateTenantAdminUser(tenant.Id, model.EmailAddress, model.Password);
 
                     CheckErrors(await _userManager.CreateAsync(adminUser));
                     await _unitOfWorkManager.Current.SaveChangesAsync(); //To get admin user's id

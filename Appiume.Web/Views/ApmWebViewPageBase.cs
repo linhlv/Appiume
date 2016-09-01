@@ -1,5 +1,5 @@
 ﻿using Appiume.Apm.Web.Mvc.Views;
-using Appiume.Web.IoT.Core;
+using Appiume.Web.Modules.EventCloud.Core;
 
 namespace Appiume.Web.Views
 {
@@ -12,7 +12,7 @@ namespace Appiume.Web.Views
     {
         protected ApmWebViewPageBase()
         {
-            LocalizationSourceName = IoTConsts.LocalizationSourceName;
+            LocalizationSourceName = EventCloudConsts.LocalizationSourceName;
         }
     }
 }

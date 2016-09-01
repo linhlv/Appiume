@@ -2,7 +2,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.Owin.Security;
 
-namespace MyCompanyName.AbpZeroTemplate.Web.Controllers.Results
+namespace Appiume.Web.Controllers.Results
 {
     public class ChallengeResult : HttpUnauthorizedResult
     {

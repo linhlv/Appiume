@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Configuration;
 using Appiume.Web;
-using Appiume.Web.IoT.Api.Controllers;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
@@ -10,6 +9,7 @@ using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Microsoft.Owin.Security.Twitter;
 using Owin;
+using Appiume.Web.Modules.EventCloud.WebApi.Controllers;
 
 [assembly: OwinStartup(typeof(Startup))]
 
