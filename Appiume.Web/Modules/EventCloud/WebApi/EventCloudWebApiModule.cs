@@ -18,9 +18,9 @@ namespace Appiume.Web.Modules.EventCloud.WebApi
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
-            DynamicApiControllerBuilder
-                .ForAll<IApplicationService>(typeof(EventCloudApplicationModule).Assembly, "app")
-                .Build();
+            //DynamicApiControllerBuilder
+            //    .ForAll<IApplicationService>(typeof(EventCloudApplicationModule).Assembly, "app")
+            //    .Build();
 
             Configuration.Modules.ApmWebApi().HttpConfiguration.Filters.Add(new HostAuthenticationFilter("Bearer"));
         }

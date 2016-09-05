@@ -11,7 +11,7 @@ using Appiume.Web.Modules.EventCloud.Core.Domain.Events;
 
 namespace Appiume.Web.Modules.EventCloud.Core.Events
 {
-    [Table("GetzEvents")]
+    [Table("EventCloudEvents")]
     public class Event : FullAuditedEntity<Guid>, IMustHaveTenant
     {
         public const int MaxTitleLength = 128;

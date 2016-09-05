@@ -9,7 +9,7 @@ using Appiume.Web.Modules.EventCloud.Core.Users;
 
 namespace Appiume.Web.Modules.EventCloud.Core.Events
 {
-    [Table("GetzEventRegistrations")]
+    [Table("EventCloudEventRegistrations")]
     public class EventRegistration : CreationAuditedEntity, IMustHaveTenant
     {
         public int TenantId { get; set; }

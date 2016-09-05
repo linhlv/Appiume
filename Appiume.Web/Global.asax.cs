@@ -10,7 +10,7 @@ using Castle.Facilities.Logging;
 
 namespace Appiume.Web
 {
-    public class MvcApplication : ApmWebApplication<IoTWebModule>
+    public class MvcApplication : ApmWebApplication<AppiumeWebModule>
     {
         protected override void Application_Start(object sender, EventArgs e)
         {

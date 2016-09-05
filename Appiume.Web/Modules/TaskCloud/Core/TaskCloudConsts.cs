@@ -13,6 +13,6 @@ namespace Appiume.Web.Modules.TaskCloud.Core
         /// <summary>
         /// 
         /// </summary>
-        public const string LocalizationSourceName = "TaskCloudConsts";
+        public const string LocalizationSourceName = "TaskCloud";
     }
 }
