@@ -1325,6 +1325,30 @@
     <Compile Include="Modules\EventCloud\WebMvc\Models\Account\TenantSelectionViewModel.cs" />
     <Compile Include="Modules\EventCloud\WebMvc\Navigation\AppPageNames.cs" />
     <Compile Include="Modules\EventCloud\WebMvc\Navigation\EventCloudNavigationProvider.cs" />
+    <Compile Include="Modules\TaskCloud\Application\DtoMappings.cs" />
+    <Compile Include="Modules\TaskCloud\Application\People\Dtos\GetAllPeopleOutput.cs" />
+    <Compile Include="Modules\TaskCloud\Application\People\Dtos\PersonDto.cs" />
+    <Compile Include="Modules\TaskCloud\Application\People\IPersonAppService.cs" />
+    <Compile Include="Modules\TaskCloud\Application\People\PersonAppService.cs" />
+    <Compile Include="Modules\TaskCloud\Application\TaskCloudApplicationModule.cs" />
+    <Compile Include="Modules\TaskCloud\Application\Tasks\Dtos\CreateTaskInput.cs" />
+    <Compile Include="Modules\TaskCloud\Application\Tasks\Dtos\GetTasksInput.cs" />
+    <Compile Include="Modules\TaskCloud\Application\Tasks\Dtos\GetTasksOutput.cs" />
+    <Compile Include="Modules\TaskCloud\Application\Tasks\Dtos\TaskDto.cs" />
+    <Compile Include="Modules\TaskCloud\Application\Tasks\Dtos\UpdateTaskInput.cs" />
+    <Compile Include="Modules\TaskCloud\Application\Tasks\ITaskAppService.cs" />
+    <Compile Include="Modules\TaskCloud\Application\Tasks\TaskAppService.cs" />
+    <Compile Include="Modules\TaskCloud\Core\People\Person.cs" />
+    <Compile Include="Modules\TaskCloud\Core\TaskCloudConsts.cs" />
+    <Compile Include="Modules\TaskCloud\Core\TaskCloudCoreModule.cs" />
+    <Compile Include="Modules\TaskCloud\Core\Tasks\ITaskRepository.cs" />
+    <Compile Include="Modules\TaskCloud\Core\Tasks\Task.cs" />
+    <Compile Include="Modules\TaskCloud\Core\Tasks\TaskState.cs" />
+    <Compile Include="Modules\TaskCloud\EntityFramework\Repositories\TaskCloudRepositoryBase.cs" />
+    <Compile Include="Modules\TaskCloud\EntityFramework\Repositories\TaskRepository.cs" />
+    <Compile Include="Modules\TaskCloud\EntityFramework\TaskCloudDataModule.cs" />
+    <Compile Include="Modules\TaskCloud\EntityFramework\TaskCloudDbContext.cs" />
+    <Compile Include="Modules\TaskCloud\WebApi\TaskCloudWebApiModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\ApmWebViewPageBase.cs" />
   </ItemGroup>
@@ -1336,7 +1360,7 @@
     <Folder Include="Modules\Ecommerce\Reporting\" />
     <Folder Include="Modules\Ecommerce\Taxes\" />
     <Folder Include="Modules\EventCloud\EntityFramework\Migrations\" />
-    <Folder Include="Modules\IoT\" />
+    <Folder Include="Modules\TaskCloud\WebMvc\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Appiume\Appiume.csproj">
