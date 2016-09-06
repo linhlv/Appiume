@@ -66,7 +66,7 @@ namespace Appiume.Apm.Web
         /// </summary>
         protected virtual void Application_BeginRequest(object sender, EventArgs e)
         {
-            var langCookie = Request.Cookies["Apm.Localization.CultureName"];
+            var langCookie = Request.Cookies["Appiume.Apm.Localization.CultureName"];
             if (langCookie != null && GlobalizationHelper.IsValidCultureCode(langCookie.Value))
             {
                 Thread.CurrentThread.CurrentCulture = new CultureInfo(langCookie.Value);
@@ -96,7 +96,7 @@ namespace Appiume.Apm.Web
 
         protected virtual void Application_AuthenticateRequest(object sender, EventArgs e)
         {
-            
+
         }
 
         protected virtual void Application_Error(object sender, EventArgs e)

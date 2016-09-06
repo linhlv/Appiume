@@ -21,7 +21,6 @@ using Appiume.Apm.Web.Mvc;
 using Appiume.Apm.Web.WebApi;
 using Appiume.Apm.Web.WebApi.Configuration.Startup;
 using Appiume.Apm.Web.WebApi.Controllers.Dynamic.Builders;
-using Appiume.Web.IoT.Web;
 using Appiume.Web.Dewey.Application;
 using Appiume.Web.Dewey.Core;
 using Appiume.Web.Dewey.Core.Authorization.Roles;
@@ -45,7 +44,6 @@ namespace Appiume.Web
             //Add/remove languages for your application
             Configuration.Localization.Languages.Add(new LanguageInfo("en", "English", "famfamfam-flag-england", true));
             Configuration.Localization.Languages.Add(new LanguageInfo("tr", "Türkçe", "famfamfam-flag-tr"));
-            Configuration.Localization.Languages.Add(new LanguageInfo("zh-CN", "简体中文", "famfamfam-flag-cn"));
 
             //Add a localization source
             Configuration.Localization.Sources.Add(
@@ -84,7 +82,7 @@ namespace Appiume.Web
 
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<TaskCloudNavigationProvider>();
-            
+
             //We must declare mappings to be able to use AutoMapper
             DtoMappings.Map();
         }

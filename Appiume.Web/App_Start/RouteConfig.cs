@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Appiume.Web.IoT.Web
+namespace Appiume.Web
 {
     public static class RouteConfig
     {
