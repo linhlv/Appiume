@@ -9,7 +9,7 @@
             return moment(date).format(formatStr);
         };
     })
-    .filter('fromNow', function () {
+    .filter('momentFromNow', function () {
         return function (date) {
             return moment(date).fromNow();
         };

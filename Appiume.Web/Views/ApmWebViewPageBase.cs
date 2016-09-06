@@ -1,5 +1,5 @@
 ﻿using Appiume.Apm.Web.Mvc.Views;
-using Appiume.Web.Modules.EventCloud.Core;
+using Appiume.Web.Dewey.Core;
 
 namespace Appiume.Web.Views
 {

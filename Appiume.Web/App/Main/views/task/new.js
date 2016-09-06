@@ -1,9 +1,9 @@
 ﻿(function() {
     var app = angular.module('app');
 
-    var controllerId = 'sts.views.task.new';
+    var controllerId = 'app.views.task.new';
     app.controller(controllerId, [
-        '$scope', '$location', 'abp.services.tasksystem.task', 'abp.services.tasksystem.person',
+        '$scope', '$location', 'apm.services.dewey.task', 'apm.services.dewey.person',
         function($scope, $location, taskService, personService) {
             var vm = this;
 
@@ -12,7 +12,7 @@
                 assignedPersonId: null
             };
 
-            var localize = abp.localization.getSource('SimpleTaskSystem');
+            var localize = apm.localization.getSource('TaskCloud');
 
             vm.people = []; //TODO: Move Person combo to a directive?
 
@@ -21,13 +21,13 @@
             });
 
             vm.saveTask = function() {
-                abp.ui.setBusy(
+                apm.ui.setBusy(
                     null,
                     taskService.createTask(
                         vm.task
                     ).success(function() {
-                        abp.notify.info(abp.utils.formatString(localize("TaskCreatedMessage"), vm.task.description));
-                        $location.path('/');
+                        apm.notify.info(apm.utils.formatString(localize("TaskCreatedMessage"), vm.task.description));
+                        $location.path('/tasks');
                     })
                 );
             };

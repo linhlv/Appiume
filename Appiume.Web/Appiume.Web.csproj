@@ -16,7 +16,7 @@
     <RootNamespace>Appiume.Web</RootNamespace>
     <AssemblyName>Appiume.Web</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -328,8 +328,8 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <EmbeddedResource Include="Modules\EventCloud\Core\Localization\Source\EventCloud-tr.xml" />
-    <EmbeddedResource Include="Modules\EventCloud\Core\Localization\Source\EventCloud.xml" />
+    <EmbeddedResource Include="Dewey\Core\Localization\Source\EventCloud-tr.xml" />
+    <EmbeddedResource Include="Dewey\Core\Localization\Source\EventCloud.xml" />
     <Content Include="log4net.config" />
     <Content Include="App\Main\views\about\about.cshtml" />
     <Content Include="App\Main\views\events\createDialog.cshtml" />
@@ -338,9 +338,9 @@
     <Content Include="App\Main\views\layout\header.cshtml" />
     <Content Include="App\Main\views\layout\layout.cshtml" />
     <Content Include="App\Main\web.config" />
-    <Content Include="Modules\TaskCloud\Core\Localization\TaskCloud-zh-CN.xml" />
-    <Content Include="Modules\TaskCloud\Core\Localization\TaskCloud.tr.xml" />
-    <Content Include="Modules\TaskCloud\Core\Localization\TaskCloud.xml" />
+    <Content Include="Dewey\Core\Localization\TaskCloud-zh-CN.xml" />
+    <Content Include="Dewey\Core\Localization\TaskCloud.tr.xml" />
+    <Content Include="Dewey\Core\Localization\TaskCloud.xml" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-cookies.min.js.map" />
@@ -394,6 +394,7 @@
     <Content Include="Apm\Framework\styles\apm.mixings.less" />
     <Content Include="App\Main\views\task\list.cshtml" />
     <Content Include="App\Main\views\task\new.cshtml" />
+    <Content Include="App\Main\views\task\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1227,156 +1228,95 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Modules\EventCloud\Application\Events\Dtos\CreateEventInput.cs" />
-    <Compile Include="Modules\EventCloud\Application\Events\Dtos\EventDetailOutput.cs" />
-    <Compile Include="Modules\EventCloud\Application\Events\Dtos\EventListDto.cs" />
-    <Compile Include="Modules\EventCloud\Application\Events\Dtos\EventRegisterOutput.cs" />
-    <Compile Include="Modules\EventCloud\Application\Events\Dtos\EventRegistrationDto.cs" />
-    <Compile Include="Modules\EventCloud\Application\Events\Dtos\GetEventListInput.cs" />
-    <Compile Include="Modules\EventCloud\Application\Events\EventAppService.cs" />
-    <Compile Include="Modules\EventCloud\Application\Events\IEventAppService.cs" />
-    <Compile Include="Modules\EventCloud\WebMvc\Controllers\EventCloudControllerBase.cs" />
+    <Compile Include="Dewey\Application\Events\Dtos\CreateEventInput.cs" />
+    <Compile Include="Dewey\Application\Events\Dtos\EventDetailOutput.cs" />
+    <Compile Include="Dewey\Application\Events\Dtos\EventListDto.cs" />
+    <Compile Include="Dewey\Application\Events\Dtos\EventRegisterOutput.cs" />
+    <Compile Include="Dewey\Application\Events\Dtos\EventRegistrationDto.cs" />
+    <Compile Include="Dewey\Application\Events\Dtos\GetEventListInput.cs" />
+    <Compile Include="Dewey\Application\Events\EventAppService.cs" />
+    <Compile Include="Dewey\Application\Events\IEventAppService.cs" />
+    <Compile Include="Dewey\WebMvc\Controllers\EventCloudControllerBase.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
-    <Compile Include="Modules\Ecommerce\AppiumeCommerceApplication.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\Category.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\CategorySortOrder.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\CategorySourceType.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\CustomPageLayoutType.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\Option.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\OptionItem.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\OptionList.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\OptionSelection.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\OptionSelectionList.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\OptionSettings.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\OptionTypes.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\Product.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\ProductDescriptionTab.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\ProductImage.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\ProductInventoryMode.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\ProductProperty.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\ProductPropertyChoice.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\ProductPropertyType.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\ProductPropertyValue.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\ProductReview.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\ProductReviewRating.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\ProductStatus.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\ProductType.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\Variant.cs" />
-    <Compile Include="Modules\Ecommerce\Catalog\Models\VariantList.cs" />
-    <Compile Include="Modules\Ecommerce\Contacts\Models\Address.cs" />
-    <Compile Include="Modules\Ecommerce\Core\IAvin.cs" />
-    <Compile Include="Modules\Ecommerce\Core\IProductRelated.cs" />
-    <Compile Include="Modules\Ecommerce\Core\IStock.cs" />
-    <Compile Include="Modules\Ecommerce\Models\CustomProperty.cs" />
-    <Compile Include="Modules\Ecommerce\Models\CustomPropertyCollection.cs" />
-    <Compile Include="Modules\Ecommerce\Orders\Models\LineItem.cs" />
-    <Compile Include="Modules\Ecommerce\Orders\Models\Order.cs" />
-    <Compile Include="Modules\Ecommerce\Orders\Models\OrderCoupon.cs" />
-    <Compile Include="Modules\Ecommerce\Orders\Models\OrderNote.cs" />
-    <Compile Include="Modules\Ecommerce\Orders\Models\OrderPackage.cs" />
-    <Compile Include="Modules\Ecommerce\Orders\Models\OrderPackageItem.cs" />
-    <Compile Include="Modules\Ecommerce\Orders\Models\OrderPaymentStatus.cs" />
-    <Compile Include="Modules\Ecommerce\Orders\Models\OrderShippingStatus.cs" />
-    <Compile Include="Modules\Ecommerce\Orders\Models\OrderStatusCode.cs" />
-    <Compile Include="Modules\Ecommerce\Shipping\Models\LengthType.cs" />
-    <Compile Include="Modules\Ecommerce\Shipping\Models\ShippableItem.cs" />
-    <Compile Include="Modules\Ecommerce\Shipping\Models\ShippingMode.cs" />
-    <Compile Include="Modules\Ecommerce\Shipping\Models\WeightType.cs" />
-    <Compile Include="Modules\Ecommerce\WebAppSettings.cs" />
-    <Compile Include="Modules\EventCloud\WebApi\Controllers\AccountController.cs" />
-    <Compile Include="Modules\EventCloud\WebApi\EventCloudWebApiModule.cs" />
-    <Compile Include="Modules\EventCloud\WebApi\Models\LoginModel.cs" />
-    <Compile Include="Modules\EventCloud\Application\EventCloudApplicationModule.cs" />
-    <Compile Include="Modules\EventCloud\Application\EventCloudAppServiceBase.cs" />
-    <Compile Include="Modules\EventCloud\Application\Roles\Dto\UpdateRolePermissionsInput.cs" />
-    <Compile Include="Modules\EventCloud\Application\Roles\IRoleAppService.cs" />
-    <Compile Include="Modules\EventCloud\Application\Roles\RoleAppService.cs" />
-    <Compile Include="Modules\EventCloud\Application\Sessions\Dto\GetCurrentLoginInformationsOutput.cs" />
-    <Compile Include="Modules\EventCloud\Application\Sessions\Dto\TenantLoginInfoDto.cs" />
-    <Compile Include="Modules\EventCloud\Application\Sessions\Dto\UserLoginInfoDto.cs" />
-    <Compile Include="Modules\EventCloud\Application\Sessions\ISessionAppService.cs" />
-    <Compile Include="Modules\EventCloud\Application\Sessions\SessionAppService.cs" />
-    <Compile Include="Modules\EventCloud\Application\Statistics\IStatisticsAppService.cs" />
-    <Compile Include="Modules\EventCloud\Application\Statistics\StatisticsAppService.cs" />
-    <Compile Include="Modules\EventCloud\Application\Users\Dto\ProhibitPermissionInput.cs" />
-    <Compile Include="Modules\EventCloud\Application\Users\IUserAppService.cs" />
-    <Compile Include="Modules\EventCloud\Application\Users\UserAppService.cs" />
-    <Compile Include="Modules\EventCloud\Core\Authorization\PermissionChecker.cs" />
-    <Compile Include="Modules\EventCloud\Core\Authorization\Roles\Role.cs" />
-    <Compile Include="Modules\EventCloud\Core\Authorization\Roles\RoleManager.cs" />
-    <Compile Include="Modules\EventCloud\Core\Authorization\Roles\RoleStore.cs" />
-    <Compile Include="Modules\EventCloud\Core\Authorization\Roles\StaticRoleNames.cs" />
-    <Compile Include="Modules\EventCloud\Core\Configuration\EventCloudSettingNames.cs" />
-    <Compile Include="Modules\EventCloud\Core\Configuration\EventCloudSettingProvider.cs" />
-    <Compile Include="Modules\EventCloud\Core\Domain\Events\DomainEvents.cs" />
-    <Compile Include="Modules\EventCloud\Core\Editions\EditionManager.cs" />
-    <Compile Include="Modules\EventCloud\Core\Events\Event.cs" />
-    <Compile Include="Modules\EventCloud\Core\Events\EventCancelledEvent.cs" />
-    <Compile Include="Modules\EventCloud\Core\Events\EventDateChangedEvent.cs" />
-    <Compile Include="Modules\EventCloud\Core\Events\EventManager.cs" />
-    <Compile Include="Modules\EventCloud\Core\Events\EventRegistration.cs" />
-    <Compile Include="Modules\EventCloud\Core\Events\EventRegistrationPolicy.cs" />
-    <Compile Include="Modules\EventCloud\Core\Events\IEventManager.cs" />
-    <Compile Include="Modules\EventCloud\Core\Events\IEventRegistrationPolicy.cs" />
-    <Compile Include="Modules\EventCloud\Core\Events\Notifications\EventUserEmailer.cs" />
-    <Compile Include="Modules\EventCloud\Core\Features\FeatureValueStore.cs" />
-    <Compile Include="Modules\EventCloud\Core\EventCloudConsts.cs" />
-    <Compile Include="Modules\EventCloud\Core\EventCloudCoreModule.cs" />
-    <Compile Include="Modules\EventCloud\Core\EventCloudServiceBase.cs" />
-    <Compile Include="Modules\EventCloud\Core\MultiTenancy\Tenant.cs" />
-    <Compile Include="Modules\EventCloud\Core\MultiTenancy\TenantManager.cs" />
-    <Compile Include="Modules\EventCloud\Core\Users\User.cs" />
-    <Compile Include="Modules\EventCloud\Core\Users\UserManager.cs" />
-    <Compile Include="Modules\EventCloud\Core\Users\UserStore.cs" />
-    <Compile Include="Modules\EventCloud\EntityFramework\EventCloudContext.cs" />
-    <Compile Include="Modules\EventCloud\EntityFramework\EventCloudDataModule.cs" />
-    <Compile Include="Modules\EventCloud\EntityFramework\Repositories\EventCloudRepositoryBase.cs" />
-    <Compile Include="Modules\EventCloud\WebMvc\Models\Account\LoginFormViewModel.cs" />
-    <Compile Include="Modules\EventCloud\WebMvc\Models\Account\LoginViewModel.cs" />
-    <Compile Include="Modules\EventCloud\WebMvc\Models\Account\RegisterResultViewModel.cs" />
-    <Compile Include="Modules\EventCloud\WebMvc\Models\Account\RegisterTenantViewModel.cs" />
-    <Compile Include="Modules\EventCloud\WebMvc\Models\Account\RegisterViewModel.cs" />
-    <Compile Include="Modules\EventCloud\WebMvc\Models\Account\TenantSelectionViewModel.cs" />
-    <Compile Include="Modules\EventCloud\WebMvc\Navigation\AppPageNames.cs" />
-    <Compile Include="Modules\EventCloud\WebMvc\Navigation\EventCloudNavigationProvider.cs" />
-    <Compile Include="Modules\TaskCloud\Application\DtoMappings.cs" />
-    <Compile Include="Modules\TaskCloud\Application\People\Dtos\GetAllPeopleOutput.cs" />
-    <Compile Include="Modules\TaskCloud\Application\People\Dtos\PersonDto.cs" />
-    <Compile Include="Modules\TaskCloud\Application\People\IPersonAppService.cs" />
-    <Compile Include="Modules\TaskCloud\Application\People\PersonAppService.cs" />
-    <Compile Include="Modules\TaskCloud\Application\TaskCloudApplicationModule.cs" />
-    <Compile Include="Modules\TaskCloud\Application\Tasks\Dtos\CreateTaskInput.cs" />
-    <Compile Include="Modules\TaskCloud\Application\Tasks\Dtos\GetTasksInput.cs" />
-    <Compile Include="Modules\TaskCloud\Application\Tasks\Dtos\GetTasksOutput.cs" />
-    <Compile Include="Modules\TaskCloud\Application\Tasks\Dtos\TaskDto.cs" />
-    <Compile Include="Modules\TaskCloud\Application\Tasks\Dtos\UpdateTaskInput.cs" />
-    <Compile Include="Modules\TaskCloud\Application\Tasks\ITaskAppService.cs" />
-    <Compile Include="Modules\TaskCloud\Application\Tasks\TaskAppService.cs" />
-    <Compile Include="Modules\TaskCloud\Core\People\Person.cs" />
-    <Compile Include="Modules\TaskCloud\Core\TaskCloudConsts.cs" />
-    <Compile Include="Modules\TaskCloud\Core\TaskCloudCoreModule.cs" />
-    <Compile Include="Modules\TaskCloud\Core\Tasks\ITaskRepository.cs" />
-    <Compile Include="Modules\TaskCloud\Core\Tasks\Task.cs" />
-    <Compile Include="Modules\TaskCloud\Core\Tasks\TaskState.cs" />
-    <Compile Include="Modules\TaskCloud\EntityFramework\Repositories\TaskCloudRepositoryBase.cs" />
-    <Compile Include="Modules\TaskCloud\EntityFramework\Repositories\TaskRepository.cs" />
-    <Compile Include="Modules\TaskCloud\EntityFramework\TaskCloudDataModule.cs" />
-    <Compile Include="Modules\TaskCloud\EntityFramework\TaskCloudDbContext.cs" />
-    <Compile Include="Modules\TaskCloud\WebApi\Navigation\TaskCloudNavigationProvider.cs" />
-    <Compile Include="Modules\TaskCloud\WebApi\TaskCloudWebApiModule.cs" />
+    <Compile Include="Dewey\WebApi\Controllers\AccountController.cs" />
+    <Compile Include="Dewey\WebApi\Models\LoginModel.cs" />
+    <Compile Include="Dewey\Application\EventCloudAppServiceBase.cs" />
+    <Compile Include="Dewey\Application\Roles\Dto\UpdateRolePermissionsInput.cs" />
+    <Compile Include="Dewey\Application\Roles\IRoleAppService.cs" />
+    <Compile Include="Dewey\Application\Roles\RoleAppService.cs" />
+    <Compile Include="Dewey\Application\Sessions\Dto\GetCurrentLoginInformationsOutput.cs" />
+    <Compile Include="Dewey\Application\Sessions\Dto\TenantLoginInfoDto.cs" />
+    <Compile Include="Dewey\Application\Sessions\Dto\UserLoginInfoDto.cs" />
+    <Compile Include="Dewey\Application\Sessions\ISessionAppService.cs" />
+    <Compile Include="Dewey\Application\Sessions\SessionAppService.cs" />
+    <Compile Include="Dewey\Application\Statistics\IStatisticsAppService.cs" />
+    <Compile Include="Dewey\Application\Statistics\StatisticsAppService.cs" />
+    <Compile Include="Dewey\Application\Users\Dto\ProhibitPermissionInput.cs" />
+    <Compile Include="Dewey\Application\Users\IUserAppService.cs" />
+    <Compile Include="Dewey\Application\Users\UserAppService.cs" />
+    <Compile Include="Dewey\Core\Authorization\PermissionChecker.cs" />
+    <Compile Include="Dewey\Core\Authorization\Roles\Role.cs" />
+    <Compile Include="Dewey\Core\Authorization\Roles\RoleManager.cs" />
+    <Compile Include="Dewey\Core\Authorization\Roles\RoleStore.cs" />
+    <Compile Include="Dewey\Core\Authorization\Roles\StaticRoleNames.cs" />
+    <Compile Include="Dewey\Core\Configuration\EventCloudSettingNames.cs" />
+    <Compile Include="Dewey\Core\Configuration\EventCloudSettingProvider.cs" />
+    <Compile Include="Dewey\Core\Domain\Events\DomainEvents.cs" />
+    <Compile Include="Dewey\Core\Editions\EditionManager.cs" />
+    <Compile Include="Dewey\Core\Events\Event.cs" />
+    <Compile Include="Dewey\Core\Events\EventCancelledEvent.cs" />
+    <Compile Include="Dewey\Core\Events\EventDateChangedEvent.cs" />
+    <Compile Include="Dewey\Core\Events\EventManager.cs" />
+    <Compile Include="Dewey\Core\Events\EventRegistration.cs" />
+    <Compile Include="Dewey\Core\Events\EventRegistrationPolicy.cs" />
+    <Compile Include="Dewey\Core\Events\IEventManager.cs" />
+    <Compile Include="Dewey\Core\Events\IEventRegistrationPolicy.cs" />
+    <Compile Include="Dewey\Core\Events\Notifications\EventUserEmailer.cs" />
+    <Compile Include="Dewey\Core\Features\FeatureValueStore.cs" />
+    <Compile Include="Dewey\Core\EventCloudConsts.cs" />
+    <Compile Include="Dewey\Core\EventCloudServiceBase.cs" />
+    <Compile Include="Dewey\Core\MultiTenancy\Tenant.cs" />
+    <Compile Include="Dewey\Core\MultiTenancy\TenantManager.cs" />
+    <Compile Include="Dewey\Core\Users\User.cs" />
+    <Compile Include="Dewey\Core\Users\UserManager.cs" />
+    <Compile Include="Dewey\Core\Users\UserStore.cs" />
+    <Compile Include="Dewey\EntityFramework\DeweyDbContext.cs" />
+    <Compile Include="Dewey\EntityFramework\Repositories\EventCloudRepositoryBase.cs" />
+    <Compile Include="Dewey\WebMvc\Models\Account\LoginFormViewModel.cs" />
+    <Compile Include="Dewey\WebMvc\Models\Account\LoginViewModel.cs" />
+    <Compile Include="Dewey\WebMvc\Models\Account\RegisterResultViewModel.cs" />
+    <Compile Include="Dewey\WebMvc\Models\Account\RegisterTenantViewModel.cs" />
+    <Compile Include="Dewey\WebMvc\Models\Account\RegisterViewModel.cs" />
+    <Compile Include="Dewey\WebMvc\Models\Account\TenantSelectionViewModel.cs" />
+    <Compile Include="Dewey\WebMvc\Navigation\AppPageNames.cs" />
+    <Compile Include="Dewey\WebMvc\Navigation\EventCloudNavigationProvider.cs" />
+    <Compile Include="Dewey\Application\DtoMappings.cs" />
+    <Compile Include="Dewey\Application\People\Dtos\GetAllPeopleOutput.cs" />
+    <Compile Include="Dewey\Application\People\Dtos\PersonDto.cs" />
+    <Compile Include="Dewey\Application\People\IPersonAppService.cs" />
+    <Compile Include="Dewey\Application\People\PersonAppService.cs" />
+    <Compile Include="Dewey\Application\Tasks\Dtos\CreateTaskInput.cs" />
+    <Compile Include="Dewey\Application\Tasks\Dtos\GetTasksInput.cs" />
+    <Compile Include="Dewey\Application\Tasks\Dtos\GetTasksOutput.cs" />
+    <Compile Include="Dewey\Application\Tasks\Dtos\TaskDto.cs" />
+    <Compile Include="Dewey\Application\Tasks\Dtos\UpdateTaskInput.cs" />
+    <Compile Include="Dewey\Application\Tasks\ITaskAppService.cs" />
+    <Compile Include="Dewey\Application\Tasks\TaskAppService.cs" />
+    <Compile Include="Dewey\Core\People\Person.cs" />
+    <Compile Include="Dewey\Core\TaskCloudConsts.cs" />
+    <Compile Include="Dewey\Core\Tasks\ITaskRepository.cs" />
+    <Compile Include="Dewey\Core\Tasks\Task.cs" />
+    <Compile Include="Dewey\Core\Tasks\TaskState.cs" />
+    <Compile Include="Dewey\EntityFramework\Repositories\TaskCloudRepositoryBase.cs" />
+    <Compile Include="Dewey\EntityFramework\Repositories\TaskRepository.cs" />
+    <Compile Include="Dewey\WebMvc\Navigation\TaskCloudNavigationProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ApmTaskWebViewPageBase.cs" />
     <Compile Include="Views\ApmWebViewPageBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Modules\Ecommerce\Accounts\" />
-    <Folder Include="Modules\Ecommerce\Content\" />
-    <Folder Include="Modules\Ecommerce\Marketing\" />
-    <Folder Include="Modules\Ecommerce\Metrics\" />
-    <Folder Include="Modules\Ecommerce\Reporting\" />
-    <Folder Include="Modules\Ecommerce\Taxes\" />
-    <Folder Include="Modules\EventCloud\EntityFramework\Migrations\" />
-    <Folder Include="Modules\TaskCloud\WebMvc\" />
+    <Folder Include="Dewey\EntityFramework\Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Appiume\Appiume.csproj">
@@ -1397,9 +1337,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55407</DevelopmentServerPort>
+          <DevelopmentServerPort>20368</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55407/</IISUrl>
+          <IISUrl>http://appiume.iot</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

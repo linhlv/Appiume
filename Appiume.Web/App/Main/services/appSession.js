@@ -7,7 +7,7 @@
                     tenant: null
                 };
 
-                apm.services.app.session.getCurrentLoginInformations({ async: false }).done(function (result) {
+                apm.services.dewey.session.getCurrentLoginInformations({ async: false }).done(function (result) {
                     _session.user = result.user;
                     _session.tenant = result.tenant;
                 });

@@ -1,13 +1,13 @@
-﻿<div class="panel panel-default" ng-controller="sts.views.task.list as vm">
+﻿<div class="panel panel-default" ng-controller="app.views.task.list as vm">
 
     <div class="panel-heading" style="position: relative;">
         <div class="row">
-            
+
             <!-- Title -->
             <h3 class="panel-title col-xs-6">
                 @L("TaskList") - <span>{{vm.getTaskCountText()}}</span>
             </h3>
-            
+
             <!-- Task state combobox -->
             <div class="col-xs-6 text-right">
                 <select ng-model="selectedTaskState">

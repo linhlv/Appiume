@@ -29,12 +29,12 @@
                     menu: 'Events' //Matches to name of 'Events' menu in EventCloudNavigationProvider
                 })
                 .state('tasklist', {
-                       url: '/',
+                       url: '/tasks',
                        templateUrl: '/App/Main/views/task/list.cshtml',
                        menu: 'TaskList' //Matches to name of 'TaskList' menu in SimpleTaskSystemNavigationProvider
                    })
                 .state('newtask', {
-                    url: '/new',
+                    url: '/tasks/new',
                     templateUrl: '/App/Main/views/task/new.cshtml',
                     menu: 'NewTask' //Matches to name of 'NewTask' menu in SimpleTaskSystemNavigationProvider
                 })

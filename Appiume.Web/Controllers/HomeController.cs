@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 using Appiume.Apm.Web.Mvc.Authorization;
-using Appiume.Web.Modules.EventCloud.WebMvc.Controllers;
+using Appiume.Web.Dewey.WebMvc.Controllers;
 
 namespace Appiume.Web.Controllers
 {

@@ -1,7 +1,7 @@
 ﻿(function () {
     var controllerId = 'app.views.events.detail';
     angular.module('app').controller(controllerId, [
-        '$scope', '$state','$stateParams', 'apm.services.app.event',
+        '$scope', '$state', '$stateParams', 'apm.services.dewey.event',
         function ($scope, $state, $stateParams, eventService) {
             var vm = this;
 

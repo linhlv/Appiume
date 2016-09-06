@@ -1,6 +1,6 @@
 ﻿(function () {
     angular.module('app').controller('app.views.events.createDialog', [
-        'apm.services.app.event', '$modalInstance',
+        'apm.services.dewey.event', '$modalInstance',
         function (eventService, $modalInstance) {
             var vm = this;
 

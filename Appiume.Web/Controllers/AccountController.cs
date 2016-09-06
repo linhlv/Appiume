@@ -16,11 +16,11 @@ using Appiume.Apm.Threading;
 using Appiume.Apm.UI;
 using Appiume.Apm.Web.Mvc.Models;
 using Appiume.Web.Controllers.Results;
-using Appiume.Web.Modules.EventCloud.Core.Authorization.Roles;
-using Appiume.Web.Modules.EventCloud.Core.MultiTenancy;
-using Appiume.Web.Modules.EventCloud.Core.Users;
-using Appiume.Web.Modules.EventCloud.WebMvc.Controllers;
-using Appiume.Web.Modules.EventCloud.WebMvc.Models.Account;
+using Appiume.Web.Dewey.Core.Authorization.Roles;
+using Appiume.Web.Dewey.Core.MultiTenancy;
+using Appiume.Web.Dewey.Core.Users;
+using Appiume.Web.Dewey.WebMvc.Controllers;
+using Appiume.Web.Dewey.WebMvc.Models.Account;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -221,7 +221,7 @@ namespace Appiume.Web.Controllers
 
                     if (string.IsNullOrWhiteSpace(model.Password))
                     {
-                        model.Password = Modules.EventCloud.Core.Users.User.CreateRandomPassword();
+                        model.Password = Dewey.Core.Users.User.CreateRandomPassword();
                     }
 
                     if (string.Equals(externalLoginInfo.Email, model.EmailAddress, StringComparison.InvariantCultureIgnoreCase))
@@ -344,7 +344,7 @@ namespace Appiume.Web.Controllers
 
                     //Create admin user for the tenant
 
-                    var adminUser = Modules.EventCloud.Core.Users.User.CreateTenantAdminUser(tenant.Id, model.EmailAddress, model.Password);
+                    var adminUser = Dewey.Core.Users.User.CreateTenantAdminUser(tenant.Id, model.EmailAddress, model.Password);
 
                     CheckErrors(await _userManager.CreateAsync(adminUser));
                     await _unitOfWorkManager.Current.SaveChangesAsync(); //To get admin user's id

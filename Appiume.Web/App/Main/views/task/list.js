@@ -3,11 +3,11 @@
 
     var controllerId = 'app.views.task.list';
     app.controller(controllerId, [
-        '$scope', 'apm.services.taskcloud.task',
+        '$scope', 'apm.services.dewey.task',
         function($scope, taskService) {
             var vm = this;
 
-            vm.localize = apm.localization.getSource('SimpleTaskSystem');
+            vm.localize = apm.localization.getSource('TaskCloud');
 
             vm.tasks = [];
 
@@ -18,7 +18,7 @@
             });
 
             vm.refreshTasks = function() {
-                abp.ui.setBusy( //Set whole page busy until getTasks complete
+                apm.ui.setBusy( //Set whole page busy until getTasks complete
                     null,
                     taskService.getTasks({ //Call application service method directly from javascript
                         state: $scope.selectedTaskState > 0 ? $scope.selectedTaskState : null
@@ -41,12 +41,12 @@
                     state: newState
                 }).success(function() {
                     task.state = newState;
-                    abp.notify.info(vm.localize('TaskUpdatedMessage'));
+                    apm.notify.info(vm.localize('TaskUpdatedMessage'));
                 });
             };
 
             vm.getTaskCountText = function() {
-                return abp.utils.formatString(vm.localize('Xtasks'), vm.tasks.length);
+                return apm.utils.formatString(vm.localize('Xtasks'), vm.tasks.length);
             };
         }
     ]);

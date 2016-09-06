@@ -9,7 +9,7 @@ using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Microsoft.Owin.Security.Twitter;
 using Owin;
-using Appiume.Web.Modules.EventCloud.WebApi.Controllers;
+using Appiume.Web.Dewey.WebApi.Controllers;
 
 [assembly: OwinStartup(typeof(Startup))]
 
