@@ -35,6 +35,7 @@ namespace Appiume.Web
         typeof(ApmWebApiModule),
         typeof(ApmEntityFrameworkModule),
         typeof(ApmAutoMapperModule),
+        typeof(SwaggerWebApiModule),
         typeof(ApmTenancyCoreModule)
         )]
     public class AppiumeWebModule : ApmModule
