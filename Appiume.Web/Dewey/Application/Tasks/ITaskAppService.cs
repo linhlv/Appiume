@@ -16,10 +16,16 @@ namespace Appiume.Web.Dewey.Application.Tasks
     /// </summary>
     public interface ITaskAppService : IApplicationService
     {
+        GetTaskOutput GetTask(GetTaskInput input);
+
         GetTasksOutput GetTasks(GetTasksInput input);
 
+        GetTasksByImportanceOutput GetTasksByImportance(GetTasksByImportanceInput input);
+
+        CreateTaskOutput CreateTask(CreateTaskInput input);
+
         void UpdateTask(UpdateTaskInput input);
-        
-        void CreateTask(CreateTaskInput input);
+
+        DeleteTaskOutput DeleteTask(DeleteTaskInput input);
     }
 }

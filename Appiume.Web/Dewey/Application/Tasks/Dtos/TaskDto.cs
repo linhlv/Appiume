@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using Appiume.Apm.Application.Services.Dto;
 using Appiume.Web.Dewey.Core.Tasks;
 
@@ -9,10 +10,20 @@ namespace Appiume.Web.Dewey.Application.Tasks.Dtos
     /// </summary>
     public class TaskDto : EntityDto<long>
     {
-        public int? AssignedPersonId { get; set; }
+        [Required]
+        [StringLength(200, MinimumLength = 1)]
+        public string Title { get; set; }
 
-        public string AssignedPersonName { get; set; }
+        public long? AssignedUserId { get; set; }
 
+        public string AssignedUserName { get; set; }
+
+        public byte Priority { get; set; }
+        
+        public byte Privacy { get; set; }
+
+        [Required]
+        [StringLength(2000, MinimumLength = 1)]
         public string Description { get; set; }
 
         public DateTime CreationTime { get; set; }
@@ -23,11 +34,11 @@ namespace Appiume.Web.Dewey.Application.Tasks.Dtos
         public override string ToString()
         {
             return string.Format(
-                "[Task Id={0}, Description={1}, CreationTime={2}, AssignedPersonName={3}, State={4}]",
+                "[Task Id={0}, Description={1}, CreationTime={2}, AssignedUserName={3}, State={4}]",
                 Id,
                 Description,
                 CreationTime,
-                AssignedPersonId,
+                AssignedUserId,
                 (TaskState)State
                 );
         }

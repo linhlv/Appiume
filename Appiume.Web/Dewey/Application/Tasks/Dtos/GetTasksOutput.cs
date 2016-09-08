@@ -10,6 +10,16 @@ namespace Appiume.Web.Dewey.Application.Tasks.Dtos
         /// <summary>
         /// 
         /// </summary>
-        public List<TaskDto> Tasks { get; set; } 
+        public IList<TaskDto> Tasks { get; set; }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsEditableByCurrentUser { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsDeletableByCurrentUser { get; set; }
     }
 }

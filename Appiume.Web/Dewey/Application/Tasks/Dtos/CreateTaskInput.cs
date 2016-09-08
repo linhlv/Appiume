@@ -1,16 +1,21 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Web;
+using Appiume.Apm.Application.Services.Dto;
+using Appiume.Apm.Runtime.Validation;
 
 namespace Appiume.Web.Dewey.Application.Tasks.Dtos
 {
     /// <summary>
     ///
     /// </summary>
-    public class CreateTaskInput
+    public class CreateTaskInput : IInputDto, IShouldNormalize
     {
+        public TaskDto Task { get; set; }
+
         /// <summary>
         ///
         /// </summary>
-        public int? AssignedPersonId { get; set; }
+        public long? AssignedUserId { get; set; }
 
         /// <summary>
         ///
@@ -24,7 +29,13 @@ namespace Appiume.Web.Dewey.Application.Tasks.Dtos
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format("[CreateTaskInput > AssignedPersonId = {0}, Description = {1}]", AssignedPersonId, Description);
+            return string.Format("[CreateTaskInput > AssignedUserId = {0}, Description = {1}]", AssignedUserId, Description);
+        }
+
+        public void Normalize()
+        {
+            Task.Title = HttpUtility.HtmlEncode(Task.Title);
+            Task.Description = HttpUtility.HtmlEncode(Task.Description);
         }
     }
 }

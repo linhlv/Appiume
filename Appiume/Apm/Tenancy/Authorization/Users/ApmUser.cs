@@ -80,6 +80,11 @@ namespace Appiume.Apm.Tenancy.Authorization.Users
         public virtual string Surname { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public virtual string NameAndSurname { get { return Name + " " + Surname; } }
+
+        /// <summary>
         /// Return full name (Name Surname )
         /// </summary>
         [NotMapped]

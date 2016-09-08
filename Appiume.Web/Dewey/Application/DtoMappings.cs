@@ -18,9 +18,9 @@ namespace Appiume.Web.Dewey.Application
         /// </summary>
         public static void Map()
         {
-            //I specified mapping for AssignedPersonId since NHibernate does not fill Task.AssignedPersonId
+            //I specified mapping for AssignedUserId since NHibernate does not fill Task.AssignedUserId
             //If you will just use EF, then you can remove ForMember definition.
-            Mapper.CreateMap<Task, TaskDto>().ForMember(t => t.AssignedPersonId, opts => opts.MapFrom(d => d.AssignedPerson.Id));
+            Mapper.CreateMap<Task, TaskDto>().ForMember(t => t.AssignedUserId, opts => opts.MapFrom(d => d.AssignedPerson.Id));
         }
     }
 }

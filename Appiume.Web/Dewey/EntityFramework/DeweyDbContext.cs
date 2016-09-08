@@ -1,8 +1,11 @@
 ﻿using System.Data.Common;
 using System.Data.Entity;
+using Appiume.Apm.Tenancy.Authorization.Users;
 using Appiume.Apm.Tenancy.Ef;
+using Appiume.Web.Dewey.Core.Activities;
 using Appiume.Web.Dewey.Core.Authorization.Roles;
 using Appiume.Web.Dewey.Core.Events;
+using Appiume.Web.Dewey.Core.Friendships;
 using Appiume.Web.Dewey.Core.Users;
 using Appiume.Web.Dewey.Core.Tasks;
 using Appiume.Web.Dewey.Core.MultiTenancy;
@@ -27,10 +30,12 @@ namespace Appiume.Web.Dewey.EntityFramework
         /// </summary>
         public virtual IDbSet<Task> Tasks { get; set; }
 
+        public virtual IDbSet<Friendship> Friendships { get; set; }
+
         /// <summary>
         ///
         /// </summary>
-        public virtual IDbSet<Person> People { get; set; }
+        public virtual new IDbSet<User> Users { get; set; }
 
         /* NOTE:
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
@@ -58,6 +63,41 @@ namespace Appiume.Web.Dewey.EntityFramework
             : base(connection, true)
         {
 
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            //TODO: Ignore base classes
+
+            //modelBuilder.Entity<Permission>().ToTable("AbpPermissions");
+            //modelBuilder.Entity<UserRole>().ToTable("AbpUserRoles");
+            //modelBuilder.Entity<Setting>().ToTable("AbpSettings");
+            //modelBuilder.Entity<AbpRole>().ToTable("AbpRoles");
+            //modelBuilder.Entity<AbpTenant>().ToTable("AbpTenants");
+            //modelBuilder.Entity<UserLogin>().ToTable("AbpUserLogins");
+
+            //modelBuilder.Entity<UserRole>().ToTable("AbpUserRoles");
+
+            //modelBuilder.Entity<AbpRole>().HasMany(r => r.Permissions).WithRequired().HasForeignKey(p => p.RoleId);
+
+            //modelBuilder.Entity<UserRole>().HasRequired(ur => ur.Role);
+            //modelBuilder.Entity<UserRole>().HasRequired(ur => ur.User);
+
+            //modelBuilder.Entity<AbpUser>().ToTable("AbpUsers");
+
+            modelBuilder.Ignore<ApmUser<User>>();
+
+            modelBuilder.Entity<User>().ToTable("ApmUsers");
+            modelBuilder.Entity<Activity>().ToTable("TeActivities")
+                .Map<CreateTaskActivity>(m => m.Requires("ActivityType").HasValue(1))
+                .Map<CompleteTaskActivity>(m => m.Requires("ActivityType").HasValue(2));
+
+            //modelBuilder.Entity<CompleteTaskActivity>()
+            modelBuilder.Entity<Friendship>().ToTable("TeFriendships");
+            modelBuilder.Entity<Task>().ToTable("TeTasks");
+            modelBuilder.Entity<UserFollowedActivity>().ToTable("TeUserFollowedActivities");
         }
     }
 }

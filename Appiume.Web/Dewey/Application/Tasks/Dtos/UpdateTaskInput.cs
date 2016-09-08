@@ -12,6 +12,16 @@ namespace Appiume.Web.Dewey.Application.Tasks.Dtos
     /// </summary>
     public class UpdateTaskInput : ICustomValidate
     {
+        public int Id { get; set; }
+
+        public string Title { get; set; }
+
+        public string Description { get; set; }
+
+        public byte Priority { get; set; }
+
+        public byte Privacy { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -21,7 +31,7 @@ namespace Appiume.Web.Dewey.Application.Tasks.Dtos
         /// <summary>
         /// 
         /// </summary>
-        public int? AssignedPersonId { get; set; }
+        public long? AssignedUserId { get; set; }
 
         /// <summary>
         /// 
@@ -31,9 +41,9 @@ namespace Appiume.Web.Dewey.Application.Tasks.Dtos
         //Custom validation method. It's called by ABP after data annotation validations.
         public void AddValidationErrors(List<ValidationResult> results)
         {
-            if (AssignedPersonId == null && State == null)
+            if (AssignedUserId == null && State == null)
             {
-                results.Add(new ValidationResult("Both of AssignedPersonId and State can not be null in order to update a Task!", new[] { "AssignedPersonId", "State" }));
+                results.Add(new ValidationResult("Both of AssignedUserId and State can not be null in order to update a Task!", new[] { "AssignedUserId", "State" }));
             }
         }
 
@@ -43,7 +53,7 @@ namespace Appiume.Web.Dewey.Application.Tasks.Dtos
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format("[UpdateTaskInput > TaskId = {0}, AssignedPersonId = {1}, State = {2}]", TaskId, AssignedPersonId, State);
+            return string.Format("[UpdateTaskInput > TaskId = {0}, AssignedUserId = {1}, State = {2}]", TaskId, AssignedUserId, State);
         }
     }
 }

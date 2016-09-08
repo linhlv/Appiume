@@ -18,6 +18,16 @@ namespace Appiume.Web.Dewey.Core.Tasks
         /// <summary>
         /// The task is completed.
         /// </summary>
-        Completed = 2
+        Completed = 2,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        New = 3,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        WorkingOn = 4
     }
 }

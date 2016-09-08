@@ -6,18 +6,24 @@ using System.Web;
 using Appiume.Apm.Domain.Entities;
 using Appiume.Apm.Domain.Entities.Auditing;
 using Appiume.Web.Dewey.Core.People;
+using Appiume.Web.Dewey.Core.Users;
 
 namespace Appiume.Web.Dewey.Core.Tasks
 {
     [Table("DeweyTask")]
-    public class Task : Entity<long>, IHasCreationTime
+    public class Task : AuditedEntity<long>, IHasCreationTime
     {
+        /// <summary>
+        /// Task title.
+        /// </summary>
+        public virtual string Title { get; set; }
+
         /// <summary>
         /// A reference (navigation property) to assigned <see cref="Person"/> for this task.
         /// We declare <see cref="ForeignKeyAttribute"/> for EntityFramework here. No need for NHibernate.
         /// </summary>
-        [ForeignKey("AssignedPersonId")]
-        public virtual Person AssignedPerson { get; set; }
+        [ForeignKey("AssignedUserId")]
+        public virtual User AssignedPerson { get; set; }
 
 
         /// <summary>
@@ -36,13 +42,7 @@ namespace Appiume.Web.Dewey.Core.Tasks
         /// The time when this task is created.
         /// </summary>
         public virtual DateTime CreationTime { get; set; }
-
-
-        /// <summary>
-        /// Current state of the task.
-        /// </summary>
-        public virtual TaskState State { get; set; }
-
+        
         /// <summary>
         /// Default costructor.
         /// Assigns some default values to properties.
@@ -52,5 +52,18 @@ namespace Appiume.Web.Dewey.Core.Tasks
             CreationTime = DateTime.Now;
             State = TaskState.Active;
         }
+
+
+
+        [ForeignKey("AssignedUserId")]
+        public virtual User AssignedUser { get; set; }
+
+        public virtual long? AssignedUserId { get; set; }
+
+        public virtual TaskPriority Priority { get; set; }
+
+        public virtual TaskPrivacy Privacy { get; set; }
+
+        public virtual TaskState State { get; set; }
     }
 }
