@@ -21,6 +21,7 @@ namespace Appiume.Apm.Web.WebApi.Runtime.Caching
         }
 
         [HttpPost]
+        [Route("api/ApmCache/Clear")]
         public async Task<AjaxResponse> Clear(ClearCacheModel model)
         {
             if (model.Password.IsNullOrEmpty())
