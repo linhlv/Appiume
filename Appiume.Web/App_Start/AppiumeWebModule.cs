@@ -84,6 +84,9 @@ namespace Appiume.Web
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<TaskCloudNavigationProvider>();
 
+            //Configure navigation/menu
+            Configuration.Navigation.Providers.Add<UsersNavigationProvider>();
+
             //We must declare mappings to be able to use AutoMapper
             DtoMappings.Map();
         }

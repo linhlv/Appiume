@@ -284,6 +284,7 @@
     <Content Include="App\Main\views\layout\layout.js" />
     <Content Include="App\Main\views\task\list.js" />
     <Content Include="App\Main\views\task\new.js" />
+    <Content Include="App\Main\views\users\index.js" />
     <Content Include="Content\appiume.png" />
     <Content Include="Content\bootstrap-cosmo.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -343,7 +344,6 @@
     <Content Include="App\Main\views\layout\header.cshtml" />
     <Content Include="App\Main\views\layout\layout.cshtml" />
     <Content Include="App\Main\web.config" />
-    <Content Include="Dewey\Core\Localization\TaskCloud-zh-CN.xml" />
     <Content Include="Dewey\Core\Localization\TaskCloud.tr.xml" />
     <Content Include="Dewey\Core\Localization\TaskCloud.xml" />
     <Content Include="Scripts\angular-animate.min.js.map" />
@@ -400,6 +400,7 @@
     <Content Include="App\Main\views\task\list.cshtml" />
     <Content Include="App\Main\views\task\new.cshtml" />
     <Content Include="App\Main\views\task\web.config" />
+    <Content Include="App\Main\views\users\index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1315,6 +1316,7 @@
     <Compile Include="Dewey\EntityFramework\Repositories\ActivityRepository.cs" />
     <Compile Include="Dewey\EntityFramework\Repositories\FriendshipRepository.cs" />
     <Compile Include="Dewey\EntityFramework\Repositories\UserFollowedActivityRepository.cs" />
+    <Compile Include="Dewey\WebMvc\Navigation\UsersNavigationProvider.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Appiume.Apm.Authorization;
 using Appiume.Web.Dewey.Application.Users.Dto;
 using Appiume.Web.Dewey.Core.Users;
 using System.Net.Mail;
+using Appiume.Apm.Application.Services.Dto;
 using Appiume.Apm.Domain.Repositories;
 using Appiume.Apm.Runtime.Session;
 using Appiume.Apm.UI;
@@ -24,9 +26,9 @@ namespace Appiume.Web.Dewey.Application.Users
         private readonly IEmailService _emailService;
         private readonly IFriendshipRepository _friendshipRepository;
 
-        public UserAppService(UserManager userManager, 
-            IPermissionManager permissionManager, 
-            IFriendshipRepository friendshipRepository, 
+        public UserAppService(UserManager userManager,
+            IPermissionManager permissionManager,
+            IFriendshipRepository friendshipRepository,
             IEmailService emailService,
             IRepository<User, long> userRepository)
         {
@@ -35,6 +37,14 @@ namespace Appiume.Web.Dewey.Application.Users
             _friendshipRepository = friendshipRepository;
             _emailService = emailService;
             _userRepository = userRepository;
+        }
+
+        public ListResultOutput<UserDto> GetUsers()
+        {
+            return new ListResultOutput<UserDto>
+            {
+                Items = _userManager.Users.ToList().MapTo<List<UserDto>>()
+            };
         }
 
         public async Task ProhibitPermission(ProhibitPermissionInput input)

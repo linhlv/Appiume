@@ -1,12 +1,15 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Appiume.Apm.Application.Services;
+using Appiume.Apm.Application.Services.Dto;
 using Appiume.Web.Dewey.Application.Users.Dto;
 
 namespace Appiume.Web.Dewey.Application.Users
 {
     public interface IUserAppService : IApplicationService
     {
+        ListResultOutput<UserDto> GetUsers();
+
         Task ProhibitPermission(ProhibitPermissionInput input);
 
         Task RemoveFromRole(long userId, string roleName);

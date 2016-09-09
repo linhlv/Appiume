@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Appiume.Apm.AutoMapper;
+using Appiume.Web.Dewey.Core.Users;
 
 namespace Appiume.Web.Dewey.Application.Users.Dto
 {
     /// <summary>
     /// Simple User DTO class.
     /// </summary>
-    public class UserDto 
+    [AutoMapFrom(typeof(User))]
+    public class UserDto
     {
         /// <summary>
         /// Name of the user.

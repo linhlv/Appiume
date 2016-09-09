@@ -42,7 +42,12 @@
                     url: '/about',
                     templateUrl: '/App/Main/views/about/about.cshtml',
                     menu: 'About' //Matches to name of 'About' menu in EventCloudNavigationProvider
-                });
+                })
+                 .state('users', {
+                     url: '/users',
+                     templateUrl: '/App/Main/views/users/index.cshtml',
+                     menu: 'Users' //Matches to name of 'Users' menu in ModuleZeroSampleProjectNavigationProvider
+                 });
         }
     ]);
 })();

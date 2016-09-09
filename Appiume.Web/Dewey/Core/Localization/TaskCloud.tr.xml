@@ -3,6 +3,7 @@
   <texts>
     <text name="TaskSystem" value="Görev Sistemi" />
     <text name="TaskList" value="Görev Listesi" />
+    <text name="UserList" value="Người dùng" />
     <text name="NewTask" value="Yeni Görev" />
     <text name="Xtasks" value="{0} görev" />
     <text name="AllTasks" value="Tüm görevler" />

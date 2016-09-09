@@ -3,6 +3,7 @@
   <texts>
     <text name="TaskSystem" value="Task System" />
     <text name="TaskList" value="Task List" />
+    <text name="UserList" value="User List" />
     <text name="NewTask" value="New Task" />
     <text name="Xtasks" value="{0} tasks" />
     <text name="AllTasks" value="All tasks" />
