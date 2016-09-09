@@ -21,7 +21,7 @@ namespace Appiume.Web.Dewey.Core.Activities
 
         [ForeignKey("TaskId")]
         public virtual Task Task { get; set; }
-        public virtual int TaskId { get; set; }
+        public virtual long TaskId { get; set; }
 
 
         public virtual DateTime CreationTime { get; set; }

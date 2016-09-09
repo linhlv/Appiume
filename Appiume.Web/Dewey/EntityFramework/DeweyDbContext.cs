@@ -1,5 +1,6 @@
 ﻿using System.Data.Common;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using Appiume.Apm.Tenancy.Authorization.Users;
 using Appiume.Apm.Tenancy.Ef;
 using Appiume.Web.Dewey.Core.Activities;
@@ -30,12 +31,15 @@ namespace Appiume.Web.Dewey.EntityFramework
         /// </summary>
         public virtual IDbSet<Task> Tasks { get; set; }
 
+        /// <summary>
+        ///
+        /// </summary>
         public virtual IDbSet<Friendship> Friendships { get; set; }
 
         /// <summary>
         ///
         /// </summary>
-        public virtual new IDbSet<User> Users { get; set; }
+        //public virtual new IDbSet<User> Users { get; set; }
 
         /* NOTE:
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
@@ -71,33 +75,19 @@ namespace Appiume.Web.Dewey.EntityFramework
 
             //TODO: Ignore base classes
 
-            //modelBuilder.Entity<Permission>().ToTable("AbpPermissions");
-            //modelBuilder.Entity<UserRole>().ToTable("AbpUserRoles");
-            //modelBuilder.Entity<Setting>().ToTable("AbpSettings");
-            //modelBuilder.Entity<AbpRole>().ToTable("AbpRoles");
-            //modelBuilder.Entity<AbpTenant>().ToTable("AbpTenants");
-            //modelBuilder.Entity<UserLogin>().ToTable("AbpUserLogins");
-
-            //modelBuilder.Entity<UserRole>().ToTable("AbpUserRoles");
-
-            //modelBuilder.Entity<AbpRole>().HasMany(r => r.Permissions).WithRequired().HasForeignKey(p => p.RoleId);
-
-            //modelBuilder.Entity<UserRole>().HasRequired(ur => ur.Role);
-            //modelBuilder.Entity<UserRole>().HasRequired(ur => ur.User);
-
-            //modelBuilder.Entity<AbpUser>().ToTable("AbpUsers");
-
             modelBuilder.Ignore<ApmUser<User>>();
 
             modelBuilder.Entity<User>().ToTable("ApmUsers");
-            modelBuilder.Entity<Activity>().ToTable("TeActivities")
+            modelBuilder.Entity<Activity>().ToTable("SocialActivities")
                 .Map<CreateTaskActivity>(m => m.Requires("ActivityType").HasValue(1))
                 .Map<CompleteTaskActivity>(m => m.Requires("ActivityType").HasValue(2));
 
-            //modelBuilder.Entity<CompleteTaskActivity>()
-            modelBuilder.Entity<Friendship>().ToTable("TeFriendships");
-            modelBuilder.Entity<Task>().ToTable("TeTasks");
-            modelBuilder.Entity<UserFollowedActivity>().ToTable("TeUserFollowedActivities");
+            modelBuilder.Entity<Friendship>()
+                .ToTable("SocialFriendships");
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+
+            modelBuilder.Entity<Task>().ToTable("SocialTasks");
+            modelBuilder.Entity<UserFollowedActivity>().ToTable("SocialUserFollowedActivities");
         }
     }
 }

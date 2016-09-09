@@ -15,12 +15,10 @@ namespace Appiume.Web.Dewey.Core.Friendships
         public virtual User User { get; set; }
         public virtual long UserId { get; set; }
 
-        public virtual long FriendUserId { get; set; }
-
-        public virtual int PairFriendshipId { get; set; }
-
         [ForeignKey("FriendUserId")]
         public virtual User Friend { get; set; }
+        public virtual long FriendUserId { get; set; }
+        public virtual int PairFriendshipId { get; set; }
 
         [ForeignKey("PairFriendshipId")]
         public virtual Friendship Pair { get; set; }
