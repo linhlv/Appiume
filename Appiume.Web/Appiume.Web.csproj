@@ -1291,6 +1291,7 @@
     <Compile Include="Dewey\Core\Activities\IActivityService.cs" />
     <Compile Include="Dewey\Core\Activities\IUserFollowedActivityRepository.cs" />
     <Compile Include="Dewey\Core\Activities\UserFollowedActivity.cs" />
+    <Compile Include="Dewey\Core\Events\Notifications\EventCancelFirebaseNotification.cs" />
     <Compile Include="Dewey\Core\Friendships\Friendship.cs" />
     <Compile Include="Dewey\Core\Friendships\FriendshipDomainService.cs" />
     <Compile Include="Dewey\Core\Friendships\FriendshipPolicy.cs" />
