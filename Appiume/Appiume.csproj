@@ -438,6 +438,10 @@
     <Compile Include="Apm\Configuration\SettingManager.cs" />
     <Compile Include="Apm\Domain\Uow\InnerUnitOfWorkCompleteHandle.cs" />
     <Compile Include="Apm\Domain\Uow\UnitOfWorkManager.cs" />
+    <Compile Include="Apm\FirebaseCloudMessaging\FirebaseCloudMessagingNotification.cs" />
+    <Compile Include="Apm\FirebaseCloudMessaging\IFirebaseCloudMessagingNotification.cs" />
+    <Compile Include="Apm\FirebaseCloudMessaging\Models\FirebaseCloudMessagingRequest.cs" />
+    <Compile Include="Apm\FirebaseCloudMessaging\Models\FirebaseCloudMessagingResponse.cs" />
     <Compile Include="Apm\Threading\BackgroundWorkers\BackgroundWorkerManager.cs" />
     <Compile Include="Apm\Threading\BackgroundWorkers\IBackgroundWorkerManager.cs" />
     <Compile Include="Apm\BackgroundJobs\InMemoryBackgroundJobStore.cs" />

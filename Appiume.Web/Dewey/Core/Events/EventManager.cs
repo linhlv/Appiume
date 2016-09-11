@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Appiume.Apm.Domain.Repositories;
 using Appiume.Apm.Events.Bus;
+using Appiume.Apm.FirebaseCloudMessaging;
+using Appiume.Apm.FirebaseCloudMessaging.Models;
 using Appiume.Apm.UI;
 using Appiume.Web.Dewey.Core.Users;
 
@@ -17,6 +19,7 @@ namespace Appiume.Web.Dewey.Core.Events
         private readonly IEventRegistrationPolicy _registrationPolicy;
         private readonly IRepository<EventRegistration> _eventRegistrationRepository;
         private readonly IRepository<Event, Guid> _eventRepository;
+    
 
         public EventManager(
             IEventRegistrationPolicy registrationPolicy,

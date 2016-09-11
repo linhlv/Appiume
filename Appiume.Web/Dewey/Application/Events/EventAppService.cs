@@ -13,6 +13,7 @@ using Appiume.Apm.Runtime.Session;
 using Appiume.Web.Dewey.Application.Events.Dtos;
 using Appiume.Web.Dewey.Core.Events;
 using Appiume.Web.Dewey.Core.Users;
+using Appiume.Apm.FirebaseCloudMessaging;
 
 namespace Appiume.Web.Dewey.Application.Events
 {
@@ -21,6 +22,7 @@ namespace Appiume.Web.Dewey.Application.Events
     {
         private readonly IEventManager _eventManager;
         private readonly IRepository<Event, Guid> _eventRepository;
+      
 
         public EventAppService(
             IEventManager eventManager, 

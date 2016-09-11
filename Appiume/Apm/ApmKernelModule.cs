@@ -23,6 +23,7 @@ using Appiume.Apm.Runtime.Session;
 using Appiume.Apm.Runtime.Validation.Interception;
 using Appiume.Apm.Timing;
 using Appiume.Apm.Configuration.Startup;
+using Appiume.Apm.FirebaseCloudMessaging;
 using Appiume.Apm.Runtime.Caching;
 using Appiume.Apm.Threading;
 using Appiume.Apm.Threading.BackgroundWorkers;
@@ -152,6 +153,8 @@ namespace Appiume.Apm
             IocManager.RegisterIfNot<INotificationStore, NullNotificationStore>(DependencyLifeStyle.Singleton);
 
             IocManager.RegisterIfNot<IBackgroundJobManager, BackgroundJobManager>(DependencyLifeStyle.Singleton);
+
+            IocManager.RegisterIfNot<IFirebaseCloudMessagingNotification, FirebaseCloudMessagingNotification>(DependencyLifeStyle.Singleton);
 
             if (Configuration.BackgroundJobs.IsJobExecutionEnabled)
             {
