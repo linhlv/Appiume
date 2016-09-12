@@ -1,7 +1,15 @@
 ﻿@using System.Threading
 @using System.Web.Optimization
+
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 9 ]>
+    <html class="ie9" data-ng-app="materialAdmin" data-ng-controller="materialadminCtrl as mactrl">
+<![endif]-->
+
+<![if IE 9 ]>
+<html>
+<![endif]>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,12 +17,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Getz Cloud</title>
+    <title>Getz</title>
 
-    <link rel="shortcut icon" href="~/favicon.ico">
-
-    @Styles.Render("~/Bundles/App/vendor/css")
-    @Styles.Render("~/Bundles/App/Main/css")
+    @Styles.Render("~/Bundles/App/vendor/css2")
 
     <script type="text/javascript">
         //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
@@ -26,7 +31,8 @@
         <script src="@Url.Content("~/Scripts/others/html5shiv.js")"></script>
         <script src="@Url.Content("~/Scripts/others/respond.min.js")"></script>
     <![endif]-->
-    @Scripts.Render("~/Bundles/App/vendor/js")
+
+    @Scripts.Render("~/Bundles/App/vendor/js2")
 
     <script>
         //Localizing momentjs
@@ -39,18 +45,69 @@
     <script src="~/ApmScripts/GetScripts" type="text/javascript"></script>
 
     @Scripts.Render("~/Bundles/App/Main/js")
-    
+
 </head>
-<body>
+
+<body data-ng-class="{ 'sw-toggled': mactrl.layoutType === '1'}">
     <div ng-app="app">
         <div ng-controller="app.views.layout as vm">
             <div ng-include="'/App/Main/views/layout/header.cshtml'"></div>
-            <div class="container">
-                <div class="angular-animation-container row">
-                    <div ui-view class="shuffle-animation col-xs-12"></div>
+            <section id="main">
+                <div class="container">
+                    <div class="angular-animation-container row">
+                        <div ui-view class="shuffle-animation col-xs-12"></div>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
     </div>
+
+    <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+        <div class="ie-warning">
+            <h1 class="c-white">Warning!!</h1>
+            <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+            <div class="iew-container">
+                <ul class="iew-download">
+                    <li>
+                        <a href="http://www.google.com/chrome/">
+                            <img src="img/browsers/chrome.png" alt="">
+                            <div>Chrome</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.mozilla.org/en-US/firefox/new/">
+                            <img src="img/browsers/firefox.png" alt="">
+                            <div>Firefox</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.opera.com">
+                            <img src="img/browsers/opera.png" alt="">
+                            <div>Opera</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.apple.com/safari/">
+                            <img src="img/browsers/safari.png" alt="">
+                            <div>Safari</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="img/browsers/ie.png" alt="">
+                            <div>IE (New)</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Sorry for the inconvenience!</p>
+        </div>
+    <![endif]-->
+
 </body>
 </html>
+
+
+
+
