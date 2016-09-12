@@ -48,11 +48,12 @@
 
 </head>
 
-<body data-ng-class="{ 'sw-toggled': mactrl.layoutType === '1'}">
+<body data-ng-class="{ 'sw-toggled': vm.layoutType === '1'}">
     <div ng-app="app">
         <div ng-controller="app.views.layout as vm">
-            <div ng-include="'/App/Main/views/layout/header.cshtml'"></div>
+            <div data-ng-include="'/App/Main/views/layout/header.cshtml'" data-ng-controller="app.views.layout.header as vmh"></div>
             <section id="main">
+                <aside id="sidebar" data-ng-include="'/App/Main/views/layout/sidebar-left.cshtml'" data-ng-class="{ 'toggled': vm.sidebarToggle.left === true }"></aside>
                 <div class="container">
                     <div class="angular-animation-container row">
                         <div ui-view class="shuffle-animation col-xs-12"></div>

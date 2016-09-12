@@ -53,7 +53,6 @@
                 vm.listviewSearchStat = true;
             }
 
-
             vm.skinSwitch = function (color) {
                 vm.currentSkin = color;
             }

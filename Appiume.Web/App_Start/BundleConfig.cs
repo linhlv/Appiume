@@ -49,7 +49,6 @@ namespace Appiume.Web
                     "~/Scripts/moment-with-locales.min.js",
                     "~/Scripts/jquery.blockUI.js",
                     "~/Scripts/toastr.min.js",
-                    "~/Scripts/sweetalert/sweet-alert.min.js",
                     "~/Scripts/others/spinjs/spin.js",
                     "~/Scripts/others/spinjs/jquery.spin.js",
 
@@ -57,20 +56,22 @@ namespace Appiume.Web
                     "~/Scripts/angular-animate.min.js",
                     "~/Scripts/angular-sanitize.min.js",
                     "~/Scripts/angular-ui-router.min.js",
-                    "~/Scripts/angular-ui/ui-bootstrap.min.js",
-                    "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js",
+                    //"~/Scripts/angular-ui/ui-bootstrap.min.js",
+                    //"~/Scripts/angular-ui/ui-bootstrap-tpls.min.js",
                     "~/Scripts/angular-ui/ui-utils.min.js",
 
 
                     // < !--Angular Modules-- >
-                    "~/Content/material/bower_components/angular-ui-router/release/angular-ui-router.min.js",
-                    "~/Content/material/bower_components/angular-loading-bar/src/loading-bar.js",
-                    "~/Content/material/bower_components/oclazyload/dist/ocLazyLoad.min.js",
-                    //"~/Content/material/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",
+                    "~/Content/material/vendors/bower_components/angular-animate/angular-animate.min.js",
+                    "~/Content/material/vendors/bower_components/angular-resource/angular-resource.min.js",
+                    "~/Content/material/vendors/bower_components/angular-ui-router/release/angular-ui-router.min.js",
+                    "~/Content/material/vendors/bower_components/angular-loading-bar/src/loading-bar.js",
+                    "~/Content/material/vendors/bower_components/oclazyload/dist/ocLazyLoad.min.js",
+                    "~/Content/material/vendors/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",
 
                     // < !--Common Vendors-- >
                     "~/Content/material/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
-                    //"~/Content/material/vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js",
+                    "~/Content/material/vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js",
                     "~/Content/material/vendors/bower_components/Waves/dist/waves.min.js",
                     "~/Content/material/vendors/bootstrap-growl/bootstrap-growl.min.js",
                     "~/Content/material/vendors/bower_components/ng-table/dist/ng-table.min.js",
@@ -128,11 +129,7 @@ namespace Appiume.Web
                         "~/Scripts/angular-ui/ui-bootstrap.min.js",
                         "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js",
                         "~/Scripts/angular-ui/ui-utils.min.js",
-
-
-
-
-
+                        
                         "~/Apm/Framework/scripts/apm.js",
                         "~/Apm/Framework/scripts/libs/apm.jquery.js",
                         "~/Apm/Framework/scripts/libs/apm.toastr.js",

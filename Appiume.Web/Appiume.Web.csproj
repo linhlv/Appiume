@@ -264,6 +264,7 @@
     <Content Include="App\Main\app.js" />
     <Content Include="App\Main\colors.css" />
     <Content Include="App\Main\colors.min.css" />
+    <Content Include="App\Main\directives\template.js" />
     <Content Include="App\Main\filters\momentjs-filters.js" />
     <Content Include="App\Main\filters\truncate.js" />
     <Content Include="App\Main\images\abp-logo.png" />
@@ -272,6 +273,7 @@
     <Content Include="App\Main\images\istiklal_caddesi.jpg" />
     <Content Include="App\Main\main.css" />
     <Content Include="App\Main\main.min.css" />
+    <Content Include="App\Main\services\appMockService.js" />
     <Content Include="App\Main\services\appSession.js" />
     <Content Include="App\Main\views\about\about.css" />
     <Content Include="App\Main\views\about\about.js" />
@@ -4159,6 +4161,11 @@
     <Content Include="Content\material\vendors\fileinput\fileinput.less" />
     <Content Include="Content\material\vendors\weather-icons\weather-font.less" />
     <Content Include="Content\material\vendors\weather-icons\weather-icons.less" />
+    <Content Include="App\Main\views\layout\sidebar-left.cshtml" />
+    <Content Include="Content\data\best-selling.json" />
+    <Content Include="Content\data\messages-notifications.json" />
+    <Content Include="Content\data\recent-items.json" />
+    <Content Include="Content\data\todo.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

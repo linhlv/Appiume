@@ -3,7 +3,8 @@
 
     var app = angular.module('app', [
         'ngAnimate',
-        'ngSanitize',
+        'ngResource',
+        'ngSanitize',        
 
         'ui.router',
         'ui.bootstrap',

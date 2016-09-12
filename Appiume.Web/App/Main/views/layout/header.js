@@ -1,8 +1,8 @@
 ﻿(function () {
     var controllerId = 'app.views.layout.header';
     angular.module('app').controller(controllerId, [
-        '$rootScope', '$state', 'appSession',
-        function ($rootScope, $state, appSession) {
+        '$rootScope', '$state', 'appSession', 'messageService',
+        function ($rootScope, $state, appSession, messageService) {
             var vm = this;
 
             vm.languages = apm.localization.languages;
@@ -26,9 +26,7 @@
                     }
                 }
             };
-
-
-
+            
             // Top Search
             vm.openSearch = function () {
                 angular.element('#header').addClass('search-toggled');
@@ -37,7 +35,7 @@
 
             vm.closeSearch = function () {
                 angular.element('#header').removeClass('search-toggled');
-            }
+            }         
 
             // Get messages and notification for header
             vm.img = messageService.img;
