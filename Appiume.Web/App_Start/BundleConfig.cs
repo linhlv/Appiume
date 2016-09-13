@@ -28,6 +28,7 @@ namespace Appiume.Web
                    .Include("~/Content/material/vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css", new CssRewriteUrlTransform())
                    .Include("~/Content/material/vendors/bower_components/angular-loading-bar/src/loading-bar.css", new CssRewriteUrlTransform())
                    .Include("~/Content/material/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css", new CssRewriteUrlTransform())
+                   .Include("~/Content/toastr.min.css", new CssRewriteUrlTransform())
                    .Include("~/Content/material/css/app.min.1.css", new CssRewriteUrlTransform())
                    .Include("~/Content/material/css/app.min.2.css", new CssRewriteUrlTransform())
                    .Include("~/Content/material/css/demo.css", new CssRewriteUrlTransform())

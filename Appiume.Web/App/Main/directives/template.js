@@ -1,5 +1,10 @@
 ﻿(function () {
-    angular.module('app').directive('toggleSidebar', function () {
+    angular.module('app')
+
+    // =========================================================================
+    // MAINMENU COLLAPSE
+    // =========================================================================
+    .directive('toggleSidebar', function () {
         return {
             restrict: 'A',
             scope: {
@@ -40,5 +45,22 @@
             }
         }
 
+    })
+
+    // =========================================================================
+    // SUBMENU TOGGLE
+    // =========================================================================
+
+    .directive('toggleSubmenu', function () {
+
+        return {
+            restrict: 'A',
+            link: function (scope, element, attrs) {
+                element.click(function () {
+                    element.next().slideToggle(200);
+                    element.parent().toggleClass('toggled');
+                });
+            }
+        }
     });
 })();
