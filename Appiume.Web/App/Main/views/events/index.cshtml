@@ -1,80 +1,73 @@
 ﻿<section id="content">
     <div class="container" ng-controller="app.views.events.index as vm">
         <div class="block-header">
-            <h2>@L("Events")</h2>
-
-            <ul class="actions">
-                <li>
-                    <a href="">
-                        <i class="zmdi zmdi-trending-up"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="zmdi zmdi-check-all"></i>
-                    </a>
-                </li>
-                <li class="dropdown" uib-dropdown>
-                    <a href="" uib-dropdown-toggle>
-                        <i class="zmdi zmdi-more-vert"></i>
-                    </a>
-
-                    <ul class="dropdown-menu dropdown-menu-right">
-                        <li>
-                            <a href="" ng-click="vm.openNewEventDialog()">@L("NewEvent")</a>
-                        </li>
-                        <li>
-                            <a href="">Manage Widgets</a>
-                        </li>
-                        <li>
-                            <a href="">Widgets Settings</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-
+            <h2>Events</h2>
         </div>
-        <div class="card">
-            <div class="lv-header-alt clearfix">
-                <div class="lv-item media">
-                    <div class="toggle-switch pull-right">
-                        <label for="ts1" class="ts-label">Show cancelled events</label>
-                        <input id="ts1" type="checkbox" hidden="hidden"  ng-model="vm.filters.includeCanceledEvents">
-                        <label for="ts1" class="ts-helper"></label>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header ch-alt m-b-20">
+                        <h2>
+                            Your Events
+                            <small>Your created &amp; registered events</small>
+                        </h2>
+                        <button class="btn bgm-red btn-float waves-effect" ng-click="vm.openNewEventDialog()"><i class="zmdi zmdi-plus"></i></button>
                     </div>
-                </div>
-            </div>
-
-
-            <div id="EventsIndex">               
-                <div class="row">
-                    <div ng-repeat="event in vm.events" class="event-list-item col-md-6">
-                        <div class="event-body">
-                            <h3 class="event-title">
-                                {{event.title}}
-                            </h3>
-                            <p class="event-description">{{event.description | characters:100}}</p>
-                            <div ng-if="event.isCancelled" class="event-canceled-info">@L("ThisEventIsCanceled")</div>
-                            <div class="event-registration-info">
-                                <span ng-if="event.registrationsCount < event.maxRegistrationCount">
-                                    @L("XofYregistered", "{{event.registrationsCount}}", "{{event.maxRegistrationCount}}")
-                                </span>
-                                <span ng-if="event.maxRegistrationCount > 0 && event.registrationsCount >= event.maxRegistrationCount">
-                                    @L("XregisteredNoNewRegistrationAvailable", "{{event.registrationsCount}}")
-                                </span>
-                                <span ng-if="event.maxRegistrationCount <= 0">
-                                    @L("XregisteredUnlimitedRegistrations", "{{event.registrationsCount}}")
-                                </span>
+                    <div class="card-body card-padding">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="" ng-model="vm.filters.includeCanceledEvents">
+                                        <i class="input-helper"></i>
+                                        Show canceled events
+                                    </label>
+                                </div>
                             </div>
-                            <div class="event-actions">
-                                <a class="btn btn-sm btn-info" ng-href="#/events/{{event.id}}">@L("Details") <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="listview lv-bordered lv-lg">
+                                    <div class="lv-body">
+                                        <div class="lv-item media" ng-repeat="event in vm.events">
+
+                                            <div class="media-body">
+                                                <div class="lv-title">{{event.title}}</div>
+                                                <div class="lv-message">{{event.description | characters:100}}</div>
+                                                <ul class="lv-attrs">
+                                                    <li ng-if="event.registrationsCount < event.maxRegistrationCount">
+                                                        @L("XofYregistered", "{{event.registrationsCount}}", "{{event.maxRegistrationCount}}")
+                                                    </li>
+                                                    <li ng-if="event.maxRegistrationCount > 0 && event.registrationsCount >= event.maxRegistrationCount">
+                                                        @L("XregisteredNoNewRegistrationAvailable", "{{event.registrationsCount}}")
+                                                    </li>
+                                                    <li ng-if="event.maxRegistrationCount <= 0">
+                                                        @L("XregisteredUnlimitedRegistrations", "{{event.registrationsCount}}")
+                                                    </li>
+                                                    <li>
+                                                        {{event.date | momentFormat:'DD.MM.YYYY'}}
+                                                    </li>
+                                                </ul>
+                                                <div class="lv-actions actions dropdown" uib-dropdown>
+                                                    <a href="" uib-dropdown-toggle aria-expanded="true">
+                                                        <i class="zmdi zmdi-more-vert"></i>
+                                                    </a>
+
+                                                    <ul class="dropdown-menu dropdown-menu-right">
+                                                        <li>
+                                                            <a ng-href="#/events/{{event.id}}">@L("Details")</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <span class="event-date"><i class="fa fa-calendar-times-o"></i> {{event.date | momentFormat:'DD.MM.YYYY'}}</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
     </div>
 </section>

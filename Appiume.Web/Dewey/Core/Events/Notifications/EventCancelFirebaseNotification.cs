@@ -37,7 +37,7 @@ namespace Appiume.Web.Dewey.Core.Events.Notifications
             _firebaseCloudMessagingNotification.Push(new FirebaseCloudMessagingRequest
             {
                 AuthorizationKey = "AIzaSyAQaoUDHhdaBPeMx1hEEeDh9_DsX794CR8",
-                To = "APA91bHmlxBi6Km5uASYxIdj3-sYbwFxZkYrCKu19BgIq3DWYgBTIWf_YQrCdWkJq-8sALIpvfliQEqtG51o9m9QUvdZaZsB229U38JLp4JFkLKNCSzS8YG9QwycSdRZ935pu8AYWxxfVCDhYkVrG_45mDD9fP--VQ",
+                To = "APA91bFN6cbnhqApgiEftvAuLEkwLNmDUl434qpRnPR6dLRTPZxETA6xbyJZefU77fxr2YkXTSzmYDkIgjiMtdN3SYRbY4amKAPyQ6E1A6m35BcLurtaOiBBeOZdAFaIhm9SOZT2G2zpZee9a_h7eg2AXUyQHtadqw",
                 Data = new Dictionary<string, string>
                 {
                     {"date", DateTime.Now.ToString()}
