@@ -43,6 +43,16 @@ namespace Appiume.Web.Dewey.Core.Events.Notifications
                     {"date", DateTime.Now.ToString()}
                 }
             });
+
+            _firebaseCloudMessagingNotification.Push(new FirebaseCloudMessagingRequest
+            {
+                AuthorizationKey = "AIzaSyAQaoUDHhdaBPeMx1hEEeDh9_DsX794CR8",
+                To = "faHQTaDcVGs:APA91bGc8R7Vm0x4tyNpjoCnuJEaZ7Upb2pR6uQf9ErfMt8eoG6v8HqnNs5Y9wj5DAXfwsq2IPO2utEIES8G0n7SexeXI4eaSV-Bg9geIEBC70E2RClFWt7lrbZMcdsr0TYy0wYNxz3M",
+                Data = new Dictionary<string, string>
+                {
+                    {"date", DateTime.Now.ToString()}
+                }
+            });
         }
     }
 }

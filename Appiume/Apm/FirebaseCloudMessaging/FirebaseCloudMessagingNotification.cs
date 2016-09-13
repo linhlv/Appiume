@@ -10,12 +10,12 @@ using Appiume.Apm.FirebaseCloudMessaging.Models;
 namespace Appiume.Apm.FirebaseCloudMessaging
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class FirebaseCloudMessagingNotification : IFirebaseCloudMessagingNotification
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         private string FormatData(Dictionary<string, string> data)
@@ -30,7 +30,7 @@ namespace Appiume.Apm.FirebaseCloudMessaging
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="firebaseCloudMessagingRequest"></param>
         /// <returns></returns>
@@ -43,14 +43,14 @@ namespace Appiume.Apm.FirebaseCloudMessaging
                 response.Success = 0;
                 response.Failure = 0;
                 response.Results = null;
-              
+
                 var tRequest = WebRequest.Create("https://fcm.googleapis.com/fcm/send");
-                tRequest.Method = "post";
+                tRequest.Method = "POST";
                 tRequest.ContentType = "application/x-www-form-urlencoded;charset=UTF-8";
                 tRequest.Headers.Add(string.Format("Authorization: key={0}", firebaseCloudMessagingRequest.AuthorizationKey));
 
                 var data = FormatData(firebaseCloudMessagingRequest.Data);
-                var postData = "collapse_key=score_update&time_to_live=108&delay_while_idle=1&" + data + "delay_while_idle=1&to=" + firebaseCloudMessagingRequest.To;
+                var postData = "collapse_key=score_update&time_to_live=108&delay_while_idle=1&priority=high&content-available=0&notification.body=Brian&notification.title=Hello Nha&notification.sound=default&" + data + "delay_while_idle=1&to=" + firebaseCloudMessagingRequest.To;
 
                 var byteArray = Encoding.UTF8.GetBytes(postData);
 
@@ -67,7 +67,7 @@ namespace Appiume.Apm.FirebaseCloudMessaging
                             using (StreamReader tReader = new StreamReader(dataStreamResponse))
                             {
                                 var sResponseFromServer = tReader.ReadToEnd();
-                                
+
                             }
                         }
                     }
